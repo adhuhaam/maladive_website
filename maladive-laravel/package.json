@@ -5,7 +5,7 @@
         "dev": "npm run development",
         "development": "vite",
         "build": "npm run build:css && npm run build:js",
-        "build:css": "tailwindcss -i ./resources/css/app.css -o ./public/css/app.css --watch",
+        "build:css": "tailwindcss -i ./resources/css/app.css -o ./public/css/app.css --minify",
         "build:js": "vite build",
         "preview": "vite preview",
         "test": "php artisan test"
