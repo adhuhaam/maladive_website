@@ -4,10 +4,10 @@
 
 @section('content')
 <!-- Hero Section -->
-<section class="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20">
+<section class="relative bg-gradient-to-br from-cyan-900 via-cyan-800 to-cyan-700 text-white py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 class="text-4xl md:text-5xl font-bold mb-6">About Maladive</h1>
-        <p class="text-xl text-blue-100 max-w-3xl mx-auto">
+        <p class="text-xl text-cyan-100 max-w-3xl mx-auto">
             Leading the way in premium watersports experiences across the world's most beautiful destinations
         </p>
     </div>
@@ -31,8 +31,8 @@
             </div>
             
             <div class="bg-gray-200 rounded-xl p-8 text-center">
-                <div class="w-32 h-32 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <svg class="w-16 h-16 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="w-32 h-32 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-16 h-16 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                     </svg>
                 </div>
@@ -56,8 +56,8 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Safety First -->
             <div class="bg-white rounded-xl shadow-lg p-8 text-center">
-                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="w-16 h-16 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-8 h-8 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                     </svg>
                 </div>
@@ -69,8 +69,8 @@
             
             <!-- Environmental Responsibility -->
             <div class="bg-white rounded-xl shadow-lg p-8 text-center">
-                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="w-16 h-16 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-8 h-8 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
                 </div>
@@ -82,8 +82,8 @@
             
             <!-- Excellence -->
             <div class="bg-white rounded-xl shadow-lg p-8 text-center">
-                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="w-16 h-16 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-8 h-8 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
                     </svg>
                 </div>
@@ -115,7 +115,7 @@
                     </svg>
                 </div>
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Ahmed Hassan</h3>
-                <p class="text-blue-600 font-medium">Founder & CEO</p>
+                <p class="text-cyan-600 font-medium">Founder & CEO</p>
                 <p class="text-gray-600 text-sm mt-2">15+ years in watersports industry</p>
             </div>
             
@@ -127,7 +127,7 @@
                     </svg>
                 </div>
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Sarah Johnson</h3>
-                <p class="text-blue-600 font-medium">Operations Director</p>
+                <p class="text-cyan-600 font-medium">Operations Director</p>
                 <p class="text-gray-600 text-sm mt-2">Expert in adventure tourism</p>
             </div>
             
@@ -139,7 +139,7 @@
                     </svg>
                 </div>
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Mohammed Ali</h3>
-                <p class="text-blue-600 font-medium">Safety Manager</p>
+                <p class="text-cyan-600 font-medium">Safety Manager</p>
                 <p class="text-gray-600 text-sm mt-2">Certified safety instructor</p>
             </div>
             
@@ -151,7 +151,7 @@
                     </svg>
                 </div>
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Lisa Chen</h3>
-                <p class="text-blue-600 font-medium">Customer Experience</p>
+                <p class="text-cyan-600 font-medium">Customer Experience</p>
                 <p class="text-gray-600 text-sm mt-2">Dedicated to guest satisfaction</p>
             </div>
         </div>
@@ -159,24 +159,24 @@
 </section>
 
 <!-- Stats Section -->
-<section class="py-20 bg-blue-600 text-white">
+<section class="py-20 bg-cyan-600 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div>
                 <div class="text-4xl font-bold mb-2">10+</div>
-                <p class="text-blue-100">Years of Experience</p>
+                <p class="text-cyan-100">Years of Experience</p>
             </div>
             <div>
                 <div class="text-4xl font-bold mb-2">50+</div>
-                <p class="text-blue-100">Partner Resorts</p>
+                <p class="text-cyan-100">Partner Resorts</p>
             </div>
             <div>
                 <div class="text-4xl font-bold mb-2">10,000+</div>
-                <p class="text-blue-100">Happy Customers</p>
+                <p class="text-cyan-100">Happy Customers</p>
             </div>
             <div>
                 <div class="text-4xl font-bold mb-2">100%</div>
-                <p class="text-blue-100">Safety Record</p>
+                <p class="text-cyan-100">Safety Record</p>
             </div>
         </div>
     </div>
@@ -190,10 +190,10 @@
             Experience the thrill of watersports with a company that puts your safety and satisfaction first.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="{{ route('enquiry') }}" class="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors">
+            <a href="{{ route('enquiry') }}" class="bg-cyan-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-cyan-700 transition-colors">
                 Start Your Adventure
             </a>
-            <a href="{{ route('contact') }}" class="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors">
+            <a href="{{ route('contact') }}" class="border-2 border-cyan-600 text-cyan-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-cyan-600 hover:text-white transition-colors">
                 Get in Touch
             </a>
         </div>

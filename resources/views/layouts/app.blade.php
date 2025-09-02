@@ -13,6 +13,7 @@
     
     <!-- Styles -->
     <link href="{{ asset('build/css/css.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     
     @stack('styles')
 </head>
@@ -24,17 +25,17 @@
                 <div class="flex items-center space-x-4">
                     <span class="text-gray-600 font-bold font-overpass">FOLLOW US:</span>
                     <div class="flex items-center space-x-2">
-                        <a class="text-gray-500 hover:text-[#06e6da] transition-colors" href="#">
+                        <a class="text-gray-500 hover:text-cyan-600 transition-colors" href="#">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter w-4 h-4">
                                 <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
                             </svg>
                         </a>
-                        <a class="text-gray-500 hover:text-[#06e6da] transition-colors" href="https://www.facebook.com/maladive.mv">
+                        <a class="text-gray-500 hover:text-cyan-600 transition-colors" href="https://www.facebook.com/maladive.mv">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook w-4 h-4">
                                 <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                             </svg>
                         </a>
-                        <a class="text-gray-500 hover:text-[#06e6da] transition-colors" href="https://www.instagram.com/maladive.mv">
+                        <a class="text-gray-500 hover:text-cyan-600 transition-colors" href="https://www.instagram.com/maladive.mv">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram w-4 h-4">
                                 <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
                                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
@@ -48,21 +49,21 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone w-4 h-4">
                             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                         </svg>
-                        <span class="hover:text-[#06e6da] transition-colors cursor-pointer">+960 777 9131</span>
+                        <span class="hover:text-cyan-600 transition-colors cursor-pointer">+960 777 9131</span>
                     </div>
                     <div class="flex items-center space-x-1">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail w-4 h-4">
                             <rect width="20" height="16" x="2" y="4" rx="2"></rect>
                             <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
                         </svg>
-                        <span class="hover:text-[#06e6da] transition-colors cursor-pointer">info@malavaramaldives.com</span>
+                        <span class="hover:text-cyan-600 transition-colors cursor-pointer">info@malavaramaldives.com</span>
                     </div>
                     <div class="flex items-center space-x-1">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin w-4 h-4">
                             <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path>
                             <circle cx="12" cy="10" r="3"></circle>
                         </svg>
-                        <span class="hover:text-[#06e6da] transition-colors cursor-pointer">H.Alimas Ge, K.Male' Maldives</span>
+                        <span class="hover:text-cyan-600 transition-colors cursor-pointer">H.Alimas Ge, K.Male' Maldives</span>
                     </div>
                 </div>
             </div>
@@ -76,7 +77,7 @@
                 <!-- ENQUIRY Button -->
                 <div class="flex items-center min-w-0">
                     <a href="{{ route('enquiry') }}">
-                        <button class="relative overflow-hidden px-6 py-3 border-2 border-[#06e6da] bg-transparent text-[#06e6da] font-bold text-xs tracking-wide transition-all duration-300 font-overpass whitespace-nowrap hover:text-white" style="background-image:url(/images/nav-bg-fill-blue.png);background-repeat:repeat-x;background-position:0 -100%;transition:1.5s ease">
+                        <button class="relative overflow-hidden px-6 py-3 border-2 border-cyan-600 bg-transparent text-cyan-600 font-bold text-xs tracking-wide transition-all duration-300 font-overpass whitespace-nowrap hover:text-white water-fill-button">
                             ENQUIRY
                         </button>
                     </a>
@@ -93,17 +94,17 @@
                 
                 <!-- Left Navigation -->
                 <nav class="hidden lg:flex items-center space-x-6 xl:space-x-8 absolute left-1/2 transform -translate-x-full pr-16 xl:pr-20">
-                    <a class="text-gray-700 hover:text-[#06e6da] font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('home') }}">HOME</a>
-                    <a class="text-gray-700 hover:text-[#06e6da] font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('partner-resorts') }}">PARTNER RESORTS</a>
-                    <a class="text-gray-700 hover:text-[#06e6da] font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('shop') }}">SHOP</a>
+                    <a class="text-gray-700 hover:text-cyan-600 font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('home') }}">HOME</a>
+                    <a class="text-gray-700 hover:text-cyan-600 font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('partner-resorts') }}">PARTNER RESORTS</a>
+                    <a class="text-gray-700 hover:text-cyan-600 font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('shop') }}">SHOP</a>
                 </nav>
                 
                 <!-- Right Navigation -->
                 <nav class="hidden lg:flex items-center space-x-6 xl:space-x-8 absolute left-1/2 transform translate-x-0 pl-16 xl:pl-20">
-                    <a class="text-gray-700 hover:text-[#06e6da] font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('about') }}">ABOUT</a>
-                    <a class="text-gray-700 hover:text-[#06e6da] font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('contact') }}">CONTACT</a>
+                    <a class="text-gray-700 hover:text-cyan-600 font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('about') }}">ABOUT</a>
+                    <a class="text-gray-700 hover:text-cyan-600 font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('contact') }}">CONTACT</a>
                     <div class="relative group">
-                        <button class="flex items-center text-gray-700 hover:text-[#06e6da] font-bold text-xs tracking-wide transition-colors focus:outline-none font-overpass whitespace-nowrap">
+                        <button class="flex items-center text-gray-700 hover:text-cyan-600 font-bold text-xs tracking-wide transition-colors focus:outline-none font-overpass whitespace-nowrap">
                             SERVICES
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down w-4 h-4 ml-1 transition-transform group-hover:rotate-180">
                                 <path d="m6 9 6 6 6-6"></path>
@@ -111,15 +112,15 @@
                         </button>
                         <div class="absolute w-56 bg-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out transform group-hover:translate-y-0 overflow-hidden z-50 top-10 left-0 shadow-lg mt-2">
                             <div class="py-3">
-                                <a class="relative group/item flex items-center px-6 py-3 text-sm text-gray-600 hover:text-[#06e6da] transition-all duration-300 font-normal font-overpass border-b border-gray-100 last:border-b-0 hover:bg-cyan-50/30" href="{{ route('watersports') }}">
+                                <a class="relative group/item flex items-center px-6 py-3 text-sm text-gray-600 hover:text-cyan-600 transition-all duration-300 font-normal font-overpass border-b border-gray-100 last:border-b-0 hover:bg-cyan-50/30" href="{{ route('watersports') }}">
                                     <div class="w-2 h-2 rounded-full bg-cyan-600 opacity-0 group-hover/item:opacity-100 transition-all duration-300 mr-0 group-hover/item:mr-3 transform -translate-x-2 group-hover/item:translate-x-0"></div>
                                     <span class="transform transition-all duration-300 ease-out group-hover/item:translate-x-2">Watersports</span>
                                 </a>
-                                <a class="relative group/item flex items-center px-6 py-3 text-sm text-gray-600 hover:text-[#06e6da] transition-all duration-300 font-normal font-overpass border-b border-gray-100 last:border-b-0 hover:bg-cyan-50/30" href="{{ route('diving') }}">
+                                <a class="relative group/item flex items-center px-6 py-3 text-sm text-gray-600 hover:text-cyan-600 transition-all duration-300 font-normal font-overpass border-b border-gray-100 last:border-b-0 hover:bg-cyan-50/30" href="{{ route('diving') }}">
                                     <div class="w-2 h-2 rounded-full bg-cyan-600 opacity-0 group-hover/item:opacity-100 transition-all duration-300 mr-0 group-hover/item:mr-3 transform -translate-x-2 group-hover/item:translate-x-0"></div>
                                     <span class="transform transition-all duration-300 ease-out group-hover/item:translate-x-2">Diving</span>
                                 </a>
-                                <a class="relative group/item flex items-center px-6 py-3 text-sm text-gray-600 hover:text-[#06e6da] transition-all duration-300 font-normal font-overpass border-b border-gray-100 last:border-b-0 hover:bg-cyan-50/30" href="{{ route('excursions') }}">
+                                <a class="relative group/item flex items-center px-6 py-3 text-sm text-gray-600 hover:text-cyan-600 transition-all duration-300 font-normal font-overpass border-b border-gray-100 last:border-b-0 hover:bg-cyan-50/30" href="{{ route('excursions') }}">
                                     <div class="w-2 h-2 rounded-full bg-cyan-600 opacity-0 group-hover/item:opacity-100 transition-all duration-300 mr-0 group-hover/item:mr-3 transform -translate-x-2 group-hover/item:translate-x-0"></div>
                                     <span class="transform transition-all duration-300 ease-out group-hover/item:translate-x-2">Excursions</span>
                                 </a>
@@ -130,7 +131,7 @@
                 
                 <!-- Search Button -->
                 <div class="flex items-center min-w-0">
-                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent h-10 w-10 text-gray-700 hover:text-[#06e6da]">
+                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent h-10 w-10 text-gray-700 hover:text-cyan-600">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search w-5 h-5">
                             <circle cx="11" cy="11" r="8"></circle>
                             <path d="m21 21-4.3-4.3"></path>
@@ -187,17 +188,17 @@
                     </div>
                     <p class="text-gray-400 font-overpass font-light">Premium watersports experiences and equipment at the world's most beautiful resort destinations.</p>
                     <div class="flex space-x-4">
-                        <a class="text-gray-500 hover:text-[#06e6da] transition-colors" href="#">
+                        <a class="text-gray-500 hover:text-cyan-600 transition-colors" href="#">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter w-4 h-4">
                                 <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
                             </svg>
                         </a>
-                        <a class="text-gray-500 hover:text-[#06e6da] transition-colors" href="https://www.facebook.com/maladive.mv">
+                        <a class="text-gray-500 hover:text-cyan-600 transition-colors" href="https://www.facebook.com/maladive.mv">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook w-4 h-4">
                                 <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                             </svg>
                         </a>
-                        <a class="text-gray-500 hover:text-[#06e6da] transition-colors" href="https://www.instagram.com/maladive.mv">
+                        <a class="text-gray-500 hover:text-cyan-600 transition-colors" href="https://www.instagram.com/maladive.mv">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram w-4 h-4">
                                 <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
                                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
@@ -230,7 +231,7 @@
                     <p class="text-gray-400 mb-4 font-overpass font-light">Subscribe to our newsletter for the latest updates and offers.</p>
                     <div class="flex space-x-2">
                         <input type="email" class="flex h-10 w-full rounded-md border px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm bg-gray-800 border-gray-700 text-white font-overpass" placeholder="Enter your email"/>
-                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 btn-primary">Subscribe</button>
+                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-cyan-600 text-white hover:bg-cyan-700 h-10 px-4 py-2">Subscribe</button>
                     </div>
                 </div>
             </div>

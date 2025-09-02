@@ -8,9 +8,22 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'sans': ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        'sans': ['Overpass', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        'overpass': ['Overpass', 'sans-serif'],
       },
       colors: {
+        cyan: {
+          50: '#ecfeff',
+          100: '#cffafe',
+          200: '#a5f3fc',
+          300: '#67e8f9',
+          400: '#22d3ee',
+          500: '#06b6d4',
+          600: '#06e6da',
+          700: '#0e7490',
+          800: '#155e75',
+          900: '#164e63',
+        },
         blue: {
           50: '#eff6ff',
           100: '#dbeafe',
