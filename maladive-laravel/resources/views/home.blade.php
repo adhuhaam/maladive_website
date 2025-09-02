@@ -1,204 +1,197 @@
 @extends('layouts.app')
 
-@section('title', 'Maladive - Experience the Ultimate Watersports Adventure')
+@section('title', 'Maladive - Premium Watersports Experiences')
 
 @section('content')
-<!-- Hero Section -->
-<section class="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white overflow-hidden">
-    <!-- Marine pattern watermark -->
-    <div class="absolute inset-0 opacity-10">
-        <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
-    </div>
-    
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-        <div class="text-center">
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-                Experience the Ultimate<br>
-                <span class="text-blue-200">Watersports Adventure</span>
-            </h1>
-            <p class="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto mb-8">
-                Discover thrilling watersports activities and premium equipment at the world's most beautiful resort destinations
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="{{ route('enquiry') }}" class="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition-colors">
-                    Get Started
-                </a>
-                <a href="{{ route('services') }}" class="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
-                    Explore Services
-                </a>
+<main class="animate-fadeIn">
+    <main class="px-4 md:px-8 lg:px-12">
+        <!-- Hero Section -->
+        <section class="relative h-screen flex items-center justify-center overflow-hidden -mx-4 md:-mx-8 lg:-mx-12">
+            <div class="absolute inset-0 z-0">
+                <div class="w-full h-full bg-cover bg-center bg-no-repeat" style="background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.squarespace-cdn.com/content/v1/5b4f0c8d89c17294e53d4ffc/1730789702936-8C9L5KNE0B6NGV4Z8J40/DSC00842.jpg?format=1500w?height=1080&width=1920')"></div>
             </div>
-        </div>
-    </div>
-</section>
+            <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight font-overpass uppercase">
+                    Experience the Ultimate<span class="block" style="color:#06e6da">Watersports Adventure</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto leading-relaxed">
+                    Discover thrilling watersports activities and premium equipment at the world's most beautiful resort destinations
+                </p>
+            </div>
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+                <div class="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+                    <div class="w-1 h-3 bg-white rounded-full mt-2"></div>
+                </div>
+            </div>
+        </section>
 
-<!-- Services Section -->
-<section class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Our Services</h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                From thrilling adventures to premium equipment, we provide everything you need for the perfect watersports experience
-            </p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Watersports -->
-            <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
-                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-4">Watersports</h3>
-                <p class="text-gray-600 mb-6">
-                    Thrilling jet skis, kayaks, paddleboards and water adventures
-                </p>
-                <a href="{{ route('watersports') }}" class="text-blue-600 font-semibold hover:text-blue-700">
-                    View More →
-                </a>
+        <!-- Services Section -->
+        <section class="py-20 bg-white -mx-4 md:-mx-8 lg:-mx-12 px-4 md:px-8 lg:px-12 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-15">
+                <img alt="Marine pattern watermark" loading="lazy" decoding="async" class="object-contain" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/images/maladive-pattern.png"/>
             </div>
-            
-            <!-- Diving -->
-            <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
-                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 0h10m-10 0a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V6a2 2 0 00-2-2"></path>
-                    </svg>
+            <div class="container mx-auto relative z-10">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-overpass uppercase">Our Services</h2>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">From thrilling adventures to premium equipment, we provide everything you need for the perfect watersports experience</p>
                 </div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-4">Diving</h3>
-                <p class="text-gray-600 mb-6">
-                    Explore underwater worlds with scuba diving and snorkeling
-                </p>
-                <a href="{{ route('diving') }}" class="text-blue-600 font-semibold hover:text-blue-700">
-                    View More →
-                </a>
-            </div>
-            
-            <!-- Excursions -->
-            <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
-                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-4">Excursions</h3>
-                <p class="text-gray-600 mb-6">
-                    Guided tours, fishing trips and cultural experiences
-                </p>
-                <a href="{{ route('excursions') }}" class="text-blue-600 font-semibold hover:text-blue-700">
-                    View More →
-                </a>
-            </div>
-            
-            <!-- Equipment Sales -->
-            <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
-                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-4">Equipment Sales</h3>
-                <p class="text-gray-600 mb-6">
-                    Premium watersports equipment for resorts and businesses
-                </p>
-                <a href="{{ route('shop') }}" class="text-blue-600 font-semibold hover:text-blue-700">
-                    View More →
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Watersports -->
+                    <div class="bg-card text-card-foreground shadow-sm text-center hover:shadow-lg transition-shadow rounded-none border border-gray-200 h-80 flex flex-col">
+                        <div class="space-y-1.5 p-6 flex-1 flex flex-col justify-center">
+                            <div style="background-color:#06e6da" class="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-waves w-8 h-8 text-white">
+                                    <path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path>
+                                    <path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path>
+                                    <path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path>
+                                </svg>
+                            </div>
+                            <div class="tracking-tight text-xl text-gray-900 font-overpass uppercase font-bold mb-3">Watersports</div>
+                            <div class="text-gray-600 text-sm leading-relaxed">Thrilling jet skis, kayaks, paddleboards and water adventures</div>
+                        </div>
+                        <div class="p-0">
+                            <a class="block" href="{{ route('watersports') }}">
+                                <div class="water-fill-button h-12 cursor-pointer relative overflow-hidden">
+                                    <span class="absolute inset-0 flex items-center justify-center z-10 text-gray-700 font-overpass font-bold uppercase text-sm transition-colors duration-500">View More</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
 
-<!-- Partner Brands Section -->
-<section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Partnered Brands</h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                We collaborate with leading brands to deliver exceptional watersports experiences
-            </p>
-        </div>
-        
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
-            <!-- Waydoo -->
-            <div class="flex items-center justify-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <span class="text-blue-600 font-bold text-sm">W</span>
+                    <!-- Diving -->
+                    <div class="bg-card text-card-foreground shadow-sm text-center hover:shadow-lg transition-shadow rounded-none border border-gray-200 h-80 flex flex-col">
+                        <div class="space-y-1.5 p-6 flex-1 flex flex-col justify-center">
+                            <div style="background-color:#06e6da" class="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-anchor w-8 h-8 text-white">
+                                    <path d="M12 22V8"></path>
+                                    <path d="M5 12H2a10 10 0 0 0 20 0h-3"></path>
+                                    <circle cx="12" cy="5" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div class="tracking-tight text-xl text-gray-900 font-overpass uppercase font-bold mb-3">Diving</div>
+                            <div class="text-gray-600 text-sm leading-relaxed">Explore underwater worlds with scuba diving and snorkeling</div>
+                        </div>
+                        <div class="p-0">
+                            <a class="block" href="{{ route('diving') }}">
+                                <div class="water-fill-button h-12 cursor-pointer relative overflow-hidden">
+                                    <span class="absolute inset-0 flex items-center justify-center z-10 text-gray-700 font-overpass font-bold uppercase text-sm transition-colors duration-500">View More</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                    <p class="text-sm font-medium text-gray-700">Waydoo</p>
-                </div>
-            </div>
-            
-            <!-- JP Australia -->
-            <div class="flex items-center justify-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <span class="text-blue-600 font-bold text-sm">JP</span>
-                    </div>
-                    <p class="text-sm font-medium text-gray-700">JP Australia</p>
-                </div>
-            </div>
-            
-            <!-- Connelly -->
-            <div class="flex items-center justify-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <span class="text-blue-600 font-bold text-sm">C</span>
-                    </div>
-                    <p class="text-sm font-medium text-gray-700">Connelly</p>
-                </div>
-            </div>
-            
-            <!-- GoPro -->
-            <div class="flex items-center justify-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <span class="text-blue-600 font-bold text-sm">G</span>
-                    </div>
-                    <p class="text-sm font-medium text-gray-700">GoPro</p>
-                </div>
-            </div>
-            
-            <!-- Saeko -->
-            <div class="flex items-center justify-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <span class="text-blue-600 font-bold text-sm">S</span>
-                    </div>
-                    <p class="text-sm font-medium text-gray-700">Saeko</p>
-                </div>
-            </div>
-            
-            <!-- Mesle Watersports -->
-            <div class="flex items-center justify-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <span class="text-blue-600 font-bold text-sm">M</span>
-                    </div>
-                    <p class="text-sm font-medium text-gray-700">Mesle Watersports</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- CTA Section -->
-<section class="py-20 bg-blue-600 text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Start Your Adventure?</h2>
-        <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Join thousands of adventurers who have experienced the thrill of watersports with Maladive
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="{{ route('enquiry') }}" class="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition-colors">
-                Book Now
-            </a>
-            <a href="{{ route('contact') }}" class="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
-                Contact Us
-            </a>
-        </div>
-    </div>
-</section>
+                    <!-- Excursions -->
+                    <div class="bg-card text-card-foreground shadow-sm text-center hover:shadow-lg transition-shadow rounded-none border border-gray-200 h-80 flex flex-col">
+                        <div class="space-y-1.5 p-6 flex-1 flex flex-col justify-center">
+                            <div style="background-color:#06e6da" class="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users w-8 h-8 text-white">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                            <div class="tracking-tight text-xl text-gray-900 font-overpass uppercase font-bold mb-3">Excursions</div>
+                            <div class="text-gray-600 text-sm leading-relaxed">Guided tours, fishing trips and cultural experiences</div>
+                        </div>
+                        <div class="p-0">
+                            <a class="block" href="{{ route('excursions') }}">
+                                <div class="water-fill-button h-12 cursor-pointer relative overflow-hidden">
+                                    <span class="absolute inset-0 flex items-center justify-center z-10 text-gray-700 font-overpass font-bold uppercase text-sm transition-colors duration-500">View More</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Equipment Sales -->
+                    <div class="bg-card text-card-foreground shadow-sm text-center hover:shadow-lg transition-shadow rounded-none border border-gray-200 h-80 flex flex-col">
+                        <div class="space-y-1.5 p-6 flex-1 flex flex-col justify-center">
+                            <div style="background-color:#06e6da" class="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart w-8 h-8 text-white">
+                                    <circle cx="8" cy="21" r="1"></circle>
+                                    <circle cx="19" cy="21" r="1"></circle>
+                                    <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+                                </svg>
+                            </div>
+                            <div class="tracking-tight text-xl text-gray-900 font-overpass uppercase font-bold mb-3">Equipment Sales</div>
+                            <div class="text-gray-600 text-sm leading-relaxed">Premium watersports equipment for resorts and businesses</div>
+                        </div>
+                        <div class="p-0">
+                            <a class="block" href="{{ route('shop') }}">
+                                <div class="water-fill-button h-12 cursor-pointer relative overflow-hidden">
+                                    <span class="absolute inset-0 flex items-center justify-center z-10 text-gray-700 font-overpass font-bold uppercase text-sm transition-colors duration-500">View More</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partnered Brands Section -->
+        <section class="py-20 bg-gradient-to-r from-cyan-50 to-blue-50 -mx-4 md:-mx-8 lg:-mx-12 px-4 md:px-8 lg:px-12 overflow-hidden">
+            <div class="container mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-overpass uppercase">Partnered Brands</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">We collaborate with leading brands to deliver exceptional watersports experiences</p>
+                </div>
+                <div class="relative overflow-hidden h-32">
+                    <div class="flex items-center justify-center h-full">
+                        <div class="flex transition-transform duration-1000 ease-in-out" style="transform:translateX(calc(50% - 1300px + 0px));width:3600px">
+                            <!-- Brand logos would go here - for now using placeholder text -->
+                            <div class="flex-shrink-0 w-[200px] flex items-center justify-center transition-all duration-500 transform scale-100 opacity-40">
+                                <div class="text-center">
+                                    <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-2">
+                                        <span class="text-gray-600 font-bold text-sm">W</span>
+                                    </div>
+                                    <p class="text-sm font-medium text-gray-700">Waydoo</p>
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 w-[200px] flex items-center justify-center transition-all duration-500 transform scale-100 opacity-40">
+                                <div class="text-center">
+                                    <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-2">
+                                        <span class="text-gray-600 font-bold text-sm">JP</span>
+                                    </div>
+                                    <p class="text-sm font-medium text-gray-700">JP Australia</p>
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 w-[200px] flex items-center justify-center transition-all duration-500 transform scale-100 opacity-40">
+                                <div class="text-center">
+                                    <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-2">
+                                        <span class="text-gray-600 font-bold text-sm">C</span>
+                                    </div>
+                                    <p class="text-sm font-medium text-gray-700">Connelly</p>
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 w-[200px] flex items-center justify-center transition-all duration-500 transform scale-100 opacity-40">
+                                <div class="text-center">
+                                    <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-2">
+                                        <span class="text-gray-600 font-bold text-sm">G</span>
+                                    </div>
+                                    <p class="text-sm font-medium text-gray-700">GoPro</p>
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 w-[200px] flex items-center justify-center transition-all duration-500 transform scale-100 opacity-40">
+                                <div class="text-center">
+                                    <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-2">
+                                        <span class="text-gray-600 font-bold text-sm">S</span>
+                                    </div>
+                                    <p class="text-sm font-medium text-gray-700">Saeko</p>
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 w-[200px] flex items-center justify-center transition-all duration-500 transform scale-100 opacity-40">
+                                <div class="text-center">
+                                    <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-2">
+                                        <span class="text-gray-600 font-bold text-sm">M</span>
+                                    </div>
+                                    <p class="text-sm font-medium text-gray-700">Mesle</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</main>
 @endsection
