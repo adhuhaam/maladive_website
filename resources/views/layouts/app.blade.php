@@ -228,6 +228,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('build/js/app.js') }}"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script>
         // Mobile menu toggle
         document.addEventListener('DOMContentLoaded', function() {
