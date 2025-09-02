@@ -73,9 +73,40 @@
     <!-- Header -->
     <header class="bg-white shadow-sm">
         <div class="container mx-auto px-6 md:px-8 lg:px-12">
-            <div class="flex items-center justify-between h-28 relative">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a class="flex items-center" href="{{ route('home') }}">
+                        <div class="text-2xl font-bold text-gray-900 font-overpass">MALADIVE</div>
+                    </a>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a class="text-gray-700 hover:text-cyan-600 font-bold text-sm tracking-wide transition-colors font-overpass" href="{{ route('home') }}">HOME</a>
+                    <a class="text-gray-700 hover:text-cyan-600 font-bold text-sm tracking-wide transition-colors font-overpass" href="{{ route('partner-resorts') }}">PARTNER RESORTS</a>
+                    <a class="text-gray-700 hover:text-cyan-600 font-bold text-sm tracking-wide transition-colors font-overpass" href="{{ route('shop') }}">SHOP</a>
+                    <a class="text-gray-700 hover:text-cyan-600 font-bold text-sm tracking-wide transition-colors font-overpass" href="{{ route('about') }}">ABOUT</a>
+                    <a class="text-gray-700 hover:text-cyan-600 font-bold text-sm tracking-wide transition-colors font-overpass" href="{{ route('contact') }}">CONTACT</a>
+                    <div class="relative group">
+                        <button class="flex items-center text-gray-700 hover:text-cyan-600 font-bold text-sm tracking-wide transition-colors focus:outline-none font-overpass">
+                            SERVICES
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 transition-transform group-hover:rotate-180">
+                                <path d="m6 9 6 6 6-6"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute w-48 bg-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out transform group-hover:translate-y-0 overflow-hidden z-50 top-8 left-0 shadow-lg mt-2">
+                            <div class="py-2">
+                                <a class="block px-4 py-2 text-sm text-gray-600 hover:text-cyan-600 transition-colors font-overpass hover:bg-cyan-50" href="{{ route('watersports') }}">Watersports</a>
+                                <a class="block px-4 py-2 text-sm text-gray-600 hover:text-cyan-600 transition-colors font-overpass hover:bg-cyan-50" href="{{ route('diving') }}">Diving</a>
+                                <a class="block px-4 py-2 text-sm text-gray-600 hover:text-cyan-600 transition-colors font-overpass hover:bg-cyan-50" href="{{ route('excursions') }}">Excursions</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                
                 <!-- ENQUIRY Button -->
-                <div class="flex items-center min-w-0">
+                <div class="flex items-center">
                     <a href="{{ route('enquiry') }}">
                         <button class="relative overflow-hidden px-6 py-3 border-2 border-cyan-600 bg-transparent text-cyan-600 font-bold text-xs tracking-wide transition-all duration-300 font-overpass whitespace-nowrap hover:text-white water-fill-button">
                             ENQUIRY
@@ -83,69 +114,11 @@
                     </a>
                 </div>
                 
-                <!-- Logo in Center -->
-                <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-                    <a class="flex items-center" href="{{ route('home') }}">
-                        <div class="relative w-24 h-20">
-                            <div class="text-2xl font-bold text-gray-900">MALADIVE</div>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- Left Navigation -->
-                <nav class="hidden lg:flex items-center space-x-6 xl:space-x-8 absolute left-1/2 transform -translate-x-full pr-16 xl:pr-20">
-                    <a class="text-gray-700 hover:text-cyan-600 font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('home') }}">HOME</a>
-                    <a class="text-gray-700 hover:text-cyan-600 font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('partner-resorts') }}">PARTNER RESORTS</a>
-                    <a class="text-gray-700 hover:text-cyan-600 font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('shop') }}">SHOP</a>
-                </nav>
-                
-                <!-- Right Navigation -->
-                <nav class="hidden lg:flex items-center space-x-6 xl:space-x-8 absolute left-1/2 transform translate-x-0 pl-16 xl:pl-20">
-                    <a class="text-gray-700 hover:text-cyan-600 font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('about') }}">ABOUT</a>
-                    <a class="text-gray-700 hover:text-cyan-600 font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('contact') }}">CONTACT</a>
-                    <div class="relative group">
-                        <button class="flex items-center text-gray-700 hover:text-cyan-600 font-bold text-xs tracking-wide transition-colors focus:outline-none font-overpass whitespace-nowrap">
-                            SERVICES
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down w-4 h-4 ml-1 transition-transform group-hover:rotate-180">
-                                <path d="m6 9 6 6 6-6"></path>
-                            </svg>
-                        </button>
-                        <div class="absolute w-56 bg-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out transform group-hover:translate-y-0 overflow-hidden z-50 top-10 left-0 shadow-lg mt-2">
-                            <div class="py-3">
-                                <a class="relative group/item flex items-center px-6 py-3 text-sm text-gray-600 hover:text-cyan-600 transition-all duration-300 font-normal font-overpass border-b border-gray-100 last:border-b-0 hover:bg-cyan-50/30" href="{{ route('watersports') }}">
-                                    <div class="w-2 h-2 rounded-full bg-cyan-600 opacity-0 group-hover/item:opacity-100 transition-all duration-300 mr-0 group-hover/item:mr-3 transform -translate-x-2 group-hover/item:translate-x-0"></div>
-                                    <span class="transform transition-all duration-300 ease-out group-hover/item:translate-x-2">Watersports</span>
-                                </a>
-                                <a class="relative group/item flex items-center px-6 py-3 text-sm text-gray-600 hover:text-cyan-600 transition-all duration-300 font-normal font-overpass border-b border-gray-100 last:border-b-0 hover:bg-cyan-50/30" href="{{ route('diving') }}">
-                                    <div class="w-2 h-2 rounded-full bg-cyan-600 opacity-0 group-hover/item:opacity-100 transition-all duration-300 mr-0 group-hover/item:mr-3 transform -translate-x-2 group-hover/item:translate-x-0"></div>
-                                    <span class="transform transition-all duration-300 ease-out group-hover/item:translate-x-2">Diving</span>
-                                </a>
-                                <a class="relative group/item flex items-center px-6 py-3 text-sm text-gray-600 hover:text-cyan-600 transition-all duration-300 font-normal font-overpass border-b border-gray-100 last:border-b-0 hover:bg-cyan-50/30" href="{{ route('excursions') }}">
-                                    <div class="w-2 h-2 rounded-full bg-cyan-600 opacity-0 group-hover/item:opacity-100 transition-all duration-300 mr-0 group-hover/item:mr-3 transform -translate-x-2 group-hover/item:translate-x-0"></div>
-                                    <span class="transform transition-all duration-300 ease-out group-hover/item:translate-x-2">Excursions</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
-                
-                <!-- Search Button -->
-                <div class="flex items-center min-w-0">
-                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent h-10 w-10 text-gray-700 hover:text-cyan-600">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search w-5 h-5">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="m21 21-4.3-4.3"></path>
-                        </svg>
-                    </button>
-                </div>
-                
                 <!-- Mobile menu button -->
-                <div class="absolute right-0 lg:hidden z-20">
-                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground bg-cyan-400 hover:bg-cyan-500 text-white rounded-none w-12 h-12" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-«R1pdb»" data-state="closed">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu w-6 h-6">
-                            <line x1="4" x2="20" y1="12" y2="12"></line>
-                            <line x1="4" x2="20" y1="6" y2="6"></line>
-                            <line x1="4" x2="20" y1="18" y2="18"></line>
+                <div class="lg:hidden">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-cyan-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-500" type="button" aria-controls="mobile-menu" aria-expanded="false">
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                     </button>
                 </div>
@@ -153,17 +126,17 @@
         </div>
         
         <!-- Mobile menu -->
-        <div class="md:hidden hidden" id="mobile-menu">
+        <div class="lg:hidden hidden" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
-                <a href="{{ route('home') }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600">HOME</a>
-                <a href="{{ route('partner-resorts') }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600">PARTNER RESORTS</a>
-                <a href="{{ route('shop') }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600">SHOP</a>
-                <a href="{{ route('about') }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600">ABOUT</a>
-                <a href="{{ route('contact') }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600">CONTACT</a>
-                <a href="{{ route('watersports') }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600">Watersports</a>
-                <a href="{{ route('diving') }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600">Diving</a>
-                <a href="{{ route('excursions') }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600">Excursions</a>
-                <a href="{{ route('enquiry') }}" class="block px-3 py-2 text-base font-medium text-blue-600">ENQUIRY</a>
+                <a href="{{ route('home') }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-cyan-600">HOME</a>
+                <a href="{{ route('partner-resorts') }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-cyan-600">PARTNER RESORTS</a>
+                <a href="{{ route('shop') }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-cyan-600">SHOP</a>
+                <a href="{{ route('about') }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-cyan-600">ABOUT</a>
+                <a href="{{ route('contact') }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-cyan-600">CONTACT</a>
+                <a href="{{ route('watersports') }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-cyan-600">Watersports</a>
+                <a href="{{ route('diving') }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-cyan-600">Diving</a>
+                <a href="{{ route('excursions') }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-cyan-600">Excursions</a>
+                <a href="{{ route('enquiry') }}" class="block px-3 py-2 text-base font-medium text-cyan-600">ENQUIRY</a>
             </div>
         </div>
     </header>
