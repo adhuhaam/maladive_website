@@ -47,10 +47,11 @@
 }
 
 .water-fill-button {
-    background: linear-gradient(45deg, #06e6da 0%, #06b6d4 50%, #06e6da 100%);
-    background-size: 200% 200%;
+    background-image: url('/images/nav-bg-fill-blue.png');
+    background-repeat: repeat-x;
     background-position: 0 -100%;
-    transition: all 0.6s ease;
+    background-size: 100% 200%;
+    transition: all 1.5s ease;
     position: relative;
     overflow: hidden;
     border: 2px solid #06e6da;
@@ -82,8 +83,6 @@
 
 .water-fill-button:hover {
     background-position: 0 0;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(6, 230, 218, 0.3);
 }
 
 .water-fill-button:hover::before {

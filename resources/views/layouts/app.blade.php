@@ -71,13 +71,36 @@
     </div>
 
     <!-- Header -->
-    <header class="bg-white shadow-sm">
+    <div class="w-full bg-white relative z-30">
+        <!-- Main Top Navigation -->
+        <div class="bg-white shadow-sm">
         <div class="container mx-auto px-6 md:px-8 lg:px-12">
-            <div class="flex items-center justify-between h-20 relative">
-                <!-- ENQUIRY Button -->
-                <div class="flex items-center">
+            <div class="flex items-center justify-between h-28 relative">
+                <!-- Search Bar Mode - Full Width with Slower Fade -->
+                <div id="search-bar-top" class="absolute inset-0 flex items-center px-6 md:px-8 lg:px-12 bg-white transition-all duration-700 ease-in-out z-10 opacity-0 invisible transform -translate-y-3">
+                    <div class="flex items-center w-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search w-6 h-6 text-gray-400 mr-4 flex-shrink-0">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.3-4.3"></path>
+                        </svg>
+                        <form class="flex-1">
+                            <input type="text" id="search-input-top" class="flex rounded-md border-input px-3 py-2 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm w-full border-0 bg-transparent focus:ring-0 focus:outline-none text-gray-700 placeholder-gray-400 font-overpass text-lg h-12" placeholder="Search..." value="">
+                        </form>
+                        <button id="search-close-top" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent h-10 w-10 ml-4 text-gray-500 hover:text-gray-700 flex-shrink-0" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x w-6 h-6">
+                                <path d="M18 6 6 18"></path>
+                                <path d="m6 6 12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Regular Navigation with Slower Fade -->
+                <div id="regular-nav-top" class="w-full flex items-center justify-between transition-all duration-700 ease-in-out opacity-100 visible transform translate-y-0">
+                    <!-- Left Side - Enquiry Button -->
+                <div class="flex items-center min-w-0">
                     <a href="{{ route('enquiry') }}">
-                        <button class="relative overflow-hidden px-6 py-3 border-2 border-cyan-600 bg-transparent text-cyan-600 font-bold text-xs tracking-wide transition-all duration-300 font-overpass whitespace-nowrap hover:text-white water-fill-button">
+                        <button class="relative overflow-hidden px-6 py-3 border-2 border-[#06e6da] bg-transparent text-[#06e6da] font-bold text-xs tracking-wide transition-all duration-300 font-overpass whitespace-nowrap hover:text-white water-fill-button">
                             ENQUIRY
                         </button>
                     </a>
@@ -86,48 +109,179 @@
                 <!-- Logo in Center -->
                 <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
                     <a class="flex items-center" href="{{ route('home') }}">
-                        <img src="{{ asset('images/maladive-logo.png') }}" alt="Maladive Logo" class="h-12 w-auto">
+                        <div class="relative w-24 h-20">
+                            <img src="{{ asset('images/maladive-logo.png') }}" alt="Maladive Logo" class="object-contain" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent">
+                        </div>
                     </a>
                 </div>
                 
                 <!-- Left Navigation -->
-                <nav class="hidden lg:flex items-center space-x-8 absolute left-1/2 transform -translate-x-full pr-24">
-                    <a class="text-gray-700 hover:text-cyan-600 font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('home') }}">HOME</a>
-                    <a class="text-gray-700 hover:text-cyan-600 font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('partner-resorts') }}">PARTNER RESORTS</a>
-                    <a class="text-gray-700 hover:text-cyan-600 font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('shop') }}">SHOP</a>
+                <nav class="hidden lg:flex items-center space-x-6 xl:space-x-8 absolute left-1/2 transform -translate-x-full pr-16 xl:pr-20">
+                    <a class="text-gray-700 hover:text-[#06e6da] font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('home') }}">HOME</a>
+                    <a class="text-gray-700 hover:text-[#06e6da] font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('partner-resorts') }}">PARTNER RESORTS</a>
+                    <a class="text-gray-700 hover:text-[#06e6da] font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('shop') }}">SHOP</a>
                 </nav>
                 
                 <!-- Right Navigation -->
-                <nav class="hidden lg:flex items-center space-x-8 absolute left-1/2 transform translate-x-0 pl-24">
-                    <a class="text-gray-700 hover:text-cyan-600 font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('about') }}">ABOUT</a>
-                    <a class="text-gray-700 hover:text-cyan-600 font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('contact') }}">CONTACT</a>
+                <nav class="hidden lg:flex items-center space-x-6 xl:space-x-8 absolute left-1/2 transform translate-x-0 pl-16 xl:pl-20">
+                    <a class="text-gray-700 hover:text-[#06e6da] font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('about') }}">ABOUT</a>
+                    <a class="text-gray-700 hover:text-[#06e6da] font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('contact') }}">CONTACT</a>
                     <div class="relative group">
-                        <button class="flex items-center text-gray-700 hover:text-cyan-600 font-bold text-xs tracking-wide transition-colors focus:outline-none font-overpass whitespace-nowrap">
+                        <button class="flex items-center text-gray-700 hover:text-[#06e6da] font-bold text-xs tracking-wide transition-colors focus:outline-none font-overpass whitespace-nowrap">
                             SERVICES
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 transition-transform group-hover:rotate-180">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down w-4 h-4 ml-1 transition-transform group-hover:rotate-180">
                                 <path d="m6 9 6 6 6-6"></path>
                             </svg>
                         </button>
-                        <div class="absolute w-48 bg-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out transform group-hover:translate-y-0 overflow-hidden z-50 top-8 left-0 shadow-lg mt-2">
-                            <div class="py-2">
-                                <a class="block px-4 py-2 text-sm text-gray-600 hover:text-cyan-600 transition-colors font-overpass hover:bg-cyan-50" href="{{ route('watersports') }}">Watersports</a>
-                                <a class="block px-4 py-2 text-sm text-gray-600 hover:text-cyan-600 transition-colors font-overpass hover:bg-cyan-50" href="{{ route('diving') }}">Diving</a>
-                                <a class="block px-4 py-2 text-sm text-gray-600 hover:text-cyan-600 transition-colors font-overpass hover:bg-cyan-50" href="{{ route('excursions') }}">Excursions</a>
+                        <div class="absolute w-56 bg-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out transform group-hover:translate-y-0 overflow-hidden z-50 top-10 left-0 shadow-lg mt-2">
+                            <div class="py-3">
+                                <a class="relative group/item flex items-center px-6 py-3 text-sm text-gray-600 hover:text-[#06e6da] transition-all duration-300 font-normal font-overpass border-b border-gray-100 last:border-b-0 hover:bg-cyan-50/30" href="{{ route('watersports') }}">
+                                    <div class="w-2 h-2 rounded-full bg-cyan-600 opacity-0 group-hover/item:opacity-100 transition-all duration-300 mr-0 group-hover/item:mr-3 transform -translate-x-2 group-hover/item:translate-x-0"></div>
+                                    <span class="transform transition-all duration-300 ease-out group-hover/item:translate-x-2">Watersports</span>
+                                </a>
+                                <a class="relative group/item flex items-center px-6 py-3 text-sm text-gray-600 hover:text-[#06e6da] transition-all duration-300 font-normal font-overpass border-b border-gray-100 last:border-b-0 hover:bg-cyan-50/30" href="{{ route('diving') }}">
+                                    <div class="w-2 h-2 rounded-full bg-cyan-600 opacity-0 group-hover/item:opacity-100 transition-all duration-300 mr-0 group-hover/item:mr-3 transform -translate-x-2 group-hover/item:translate-x-0"></div>
+                                    <span class="transform transition-all duration-300 ease-out group-hover/item:translate-x-2">Diving</span>
+                                </a>
+                                <a class="relative group/item flex items-center px-6 py-3 text-sm text-gray-600 hover:text-[#06e6da] transition-all duration-300 font-normal font-overpass border-b border-gray-100 last:border-b-0 hover:bg-cyan-50/30" href="{{ route('excursions') }}">
+                                    <div class="w-2 h-2 rounded-full bg-cyan-600 opacity-0 group-hover/item:opacity-100 transition-all duration-300 mr-0 group-hover/item:mr-3 transform -translate-x-2 group-hover/item:translate-x-0"></div>
+                                    <span class="transform transition-all duration-300 ease-out group-hover/item:translate-x-2">Excursions</span>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </nav>
                 
+                    <!-- Right Side - Search Button -->
+                    <div class="flex items-center min-w-0">
+                        <button id="search-button-top" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent h-10 w-10 text-gray-700 hover:text-[#06e6da]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search w-5 h-5">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.3-4.3"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
                 <!-- Mobile menu button -->
-                <div class="lg:hidden">
-                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-cyan-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-500" type="button" aria-controls="mobile-menu" aria-expanded="false">
-                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                <div class="absolute right-0 lg:hidden z-20">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground bg-cyan-400 hover:bg-cyan-500 text-white rounded-none w-12 h-12" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-«R1pdb»" data-state="closed">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu w-6 h-6">
+                            <line x1="4" x2="20" y1="12" y2="12"></line>
+                            <line x1="4" x2="20" y1="6" y2="6"></line>
+                            <line x1="4" x2="20" y1="18" y2="18"></line>
                         </svg>
                     </button>
                 </div>
             </div>
         </div>
+    </div>
+    
+    <!-- FLOATING NAVBAR - Appears Only When Scrolling (NO SOCIAL BAR) -->
+    <div id="floating-navbar" class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-lg transition-all duration-500 ease-in-out -translate-y-full opacity-0">
+        <div class="container mx-auto px-6 md:px-8 lg:px-12">
+            <div class="flex items-center justify-between h-24 relative">
+                <!-- Search Bar Mode - Full Width for Floating Nav with Slower Fade -->
+                <div id="search-bar-floating" class="absolute inset-0 flex items-center px-6 md:px-8 lg:px-12 bg-white/95 backdrop-blur-md transition-all duration-700 ease-in-out z-10 opacity-0 invisible transform -translate-y-3">
+                    <div class="flex items-center w-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search w-6 h-6 text-gray-400 mr-4 flex-shrink-0">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.3-4.3"></path>
+                        </svg>
+                        <form class="flex-1">
+                            <input type="text" id="search-input-floating" class="flex rounded-md border-input px-3 py-2 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm w-full border-0 bg-transparent focus:ring-0 focus:outline-none text-gray-700 placeholder-gray-400 font-overpass text-lg h-12" placeholder="Search..." value="">
+                        </form>
+                        <button id="search-close-floating" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent h-10 w-10 ml-4 text-gray-500 hover:text-gray-700 flex-shrink-0" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x w-6 h-6">
+                                <path d="M18 6 6 18"></path>
+                                <path d="m6 6 12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Regular Floating Navigation with Slower Fade -->
+                <div id="regular-nav-floating" class="w-full flex items-center justify-between transition-all duration-700 ease-in-out opacity-100 visible transform translate-y-0">
+                    <!-- Left Side - Enquiry Button -->
+                    <div class="flex items-center min-w-0">
+                        <a href="{{ route('enquiry') }}">
+                            <button class="relative overflow-hidden px-3 py-2 border-2 border-[#06e6da] bg-transparent text-[#06e6da] font-bold text-xs tracking-wide transition-all duration-300 font-overpass whitespace-nowrap hover:text-white water-fill-button">
+                                ENQUIRY
+                            </button>
+                        </a>
+                    </div>
+                    
+                    <!-- Center - Logo and Navigation -->
+                    <!-- Absolutely Centered Logo -->
+                    <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                        <a class="flex items-center" href="{{ route('home') }}">
+                            <div class="relative w-20 h-16">
+                                <img src="{{ asset('images/maladive-logo.png') }}" alt="Maladive Logo" class="object-contain" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent">
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Left Navigation - Positioned to avoid logo -->
+                    <nav class="hidden lg:flex items-center space-x-4 xl:space-x-6 absolute left-1/2 transform -translate-x-full pr-12 xl:pr-16">
+                        <a class="text-gray-700 hover:text-[#06e6da] font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('home') }}">HOME</a>
+                        <a class="text-gray-700 hover:text-[#06e6da] font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('partner-resorts') }}">PARTNER RESORTS</a>
+                        <a class="text-gray-700 hover:text-[#06e6da] font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('shop') }}">SHOP</a>
+                    </nav>
+                    
+                    <!-- Right Navigation - Positioned to avoid logo -->
+                    <nav class="hidden lg:flex items-center space-x-4 xl:space-x-6 absolute left-1/2 transform translate-x-0 pl-12 xl:pl-16">
+                        <a class="text-gray-700 hover:text-[#06e6da] font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('about') }}">ABOUT</a>
+                        <a class="text-gray-700 hover:text-[#06e6da] font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('contact') }}">CONTACT</a>
+                        <div class="relative group">
+                            <button class="flex items-center text-gray-700 hover:text-[#06e6da] font-bold text-xs tracking-wide transition-colors focus:outline-none font-overpass whitespace-nowrap">
+                                SERVICES
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down w-3 h-3 ml-1 transition-transform group-hover:rotate-180">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </button>
+                            <div class="absolute w-56 bg-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out transform group-hover:translate-y-0 overflow-hidden z-50 top-10 left-0 shadow-lg mt-2">
+                                <div class="py-3">
+                                    <a class="relative group/item flex items-center px-6 py-3 text-sm text-gray-600 hover:text-[#06e6da] transition-all duration-300 font-normal font-overpass border-b border-gray-100 last:border-b-0 hover:bg-cyan-50/30" href="{{ route('watersports') }}">
+                                        <div class="w-2 h-2 rounded-full bg-cyan-600 opacity-0 group-hover/item:opacity-100 transition-all duration-300 mr-0 group-hover/item:mr-3 transform -translate-x-2 group-hover/item:translate-x-0"></div>
+                                        <span class="transform transition-all duration-300 ease-out group-hover/item:translate-x-2">Watersports</span>
+                                    </a>
+                                    <a class="relative group/item flex items-center px-6 py-3 text-sm text-gray-600 hover:text-[#06e6da] transition-all duration-300 font-normal font-overpass border-b border-gray-100 last:border-b-0 hover:bg-cyan-50/30" href="{{ route('diving') }}">
+                                        <div class="w-2 h-2 rounded-full bg-cyan-600 opacity-0 group-hover/item:opacity-100 transition-all duration-300 mr-0 group-hover/item:mr-3 transform -translate-x-2 group-hover/item:translate-x-0"></div>
+                                        <span class="transform transition-all duration-300 ease-out group-hover/item:translate-x-2">Diving</span>
+                                    </a>
+                                    <a class="relative group/item flex items-center px-6 py-3 text-sm text-gray-600 hover:text-[#06e6da] transition-all duration-300 font-normal font-overpass border-b border-gray-100 last:border-b-0 hover:bg-cyan-50/30" href="{{ route('excursions') }}">
+                                        <div class="w-2 h-2 rounded-full bg-cyan-600 opacity-0 group-hover/item:opacity-100 transition-all duration-300 mr-0 group-hover/item:mr-3 transform -translate-x-2 group-hover/item:translate-x-0"></div>
+                                        <span class="transform transition-all duration-300 ease-out group-hover/item:translate-x-2">Excursions</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                    
+                    <!-- Right Side - Search Button -->
+                    <div class="flex items-center min-w-0">
+                        <button id="search-button-floating" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent text-gray-700 hover:text-[#06e6da] w-8 h-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search w-4 h-4">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.3-4.3"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu Button for Floating Nav -->
+                <div class="absolute right-0 lg:hidden z-20">
+                    <button id="mobile-menu-button-floating" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground bg-cyan-400 hover:bg-cyan-500 text-white rounded-none w-8 h-8" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-«Redb»" data-state="closed">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu w-4 h-4">
+                            <line x1="4" x2="20" y1="12" y2="12"></line>
+                            <line x1="4" x2="20" y1="6" y2="6"></line>
+                            <line x1="4" x2="20" y1="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
         
         <!-- Mobile menu -->
         <div class="lg:hidden hidden" id="mobile-menu">
@@ -247,6 +401,152 @@
                     const isExpanded = !mobileMenu.classList.contains('hidden');
                     mobileMenuButton.setAttribute('aria-expanded', isExpanded);
                 });
+            }
+        });
+
+        // Floating navbar and search functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            let scrollTimeout;
+            let isScrolling = false;
+            
+            // Elements
+            const floatingNavbar = document.getElementById('floating-navbar');
+            const searchBarTop = document.getElementById('search-bar-top');
+            const searchBarFloating = document.getElementById('search-bar-floating');
+            const regularNavTop = document.getElementById('regular-nav-top');
+            const regularNavFloating = document.getElementById('regular-nav-floating');
+            const searchButtonTop = document.getElementById('search-button-top');
+            const searchButtonFloating = document.getElementById('search-button-floating');
+            const searchCloseTop = document.getElementById('search-close-top');
+            const searchCloseFloating = document.getElementById('search-close-floating');
+            const searchInputTop = document.getElementById('search-input-top');
+            const searchInputFloating = document.getElementById('search-input-floating');
+
+            // Scroll handler
+            function handleScroll() {
+                const scrollPosition = window.scrollY;
+                
+                // Set scrolling state
+                isScrolling = true;
+                
+                // Clear existing timeout
+                clearTimeout(scrollTimeout);
+                
+                // Hide search bars immediately when scrolling starts
+                if (searchBarTop && searchBarTop.classList.contains('opacity-100')) {
+                    hideSearchBar('top');
+                }
+                if (searchBarFloating && searchBarFloating.classList.contains('opacity-100')) {
+                    hideSearchBar('floating');
+                }
+                
+                // Show floating navbar after scrolling 300px from top
+                if (scrollPosition > 300) {
+                    showFloatingNavbar();
+                } else {
+                    hideFloatingNavbar();
+                }
+                
+                // Reset scrolling state after scroll ends
+                scrollTimeout = setTimeout(() => {
+                    isScrolling = false;
+                }, 150);
+            }
+
+            // Show/hide floating navbar
+            function showFloatingNavbar() {
+                if (floatingNavbar) {
+                    floatingNavbar.classList.remove('-translate-y-full', 'opacity-0');
+                    floatingNavbar.classList.add('translate-y-0', 'opacity-100');
+                }
+            }
+
+            function hideFloatingNavbar() {
+                if (floatingNavbar) {
+                    floatingNavbar.classList.remove('translate-y-0', 'opacity-100');
+                    floatingNavbar.classList.add('-translate-y-full', 'opacity-0');
+                }
+            }
+
+            // Show/hide search bars
+            function showSearchBar(type) {
+                if (isScrolling) return;
+                
+                if (type === 'top') {
+                    if (searchBarTop && regularNavTop) {
+                        searchBarTop.classList.remove('opacity-0', 'invisible', '-translate-y-3');
+                        searchBarTop.classList.add('opacity-100', 'visible', 'translate-y-0');
+                        regularNavTop.classList.remove('opacity-100', 'visible', 'translate-y-0');
+                        regularNavTop.classList.add('opacity-0', 'invisible', 'translate-y-3');
+                        setTimeout(() => searchInputTop?.focus(), 100);
+                    }
+                } else if (type === 'floating') {
+                    if (searchBarFloating && regularNavFloating) {
+                        searchBarFloating.classList.remove('opacity-0', 'invisible', '-translate-y-3');
+                        searchBarFloating.classList.add('opacity-100', 'visible', 'translate-y-0');
+                        regularNavFloating.classList.remove('opacity-100', 'visible', 'translate-y-0');
+                        regularNavFloating.classList.add('opacity-0', 'invisible', 'translate-y-3');
+                        setTimeout(() => searchInputFloating?.focus(), 100);
+                    }
+                }
+            }
+
+            function hideSearchBar(type) {
+                if (type === 'top') {
+                    if (searchBarTop && regularNavTop) {
+                        searchBarTop.classList.remove('opacity-100', 'visible', 'translate-y-0');
+                        searchBarTop.classList.add('opacity-0', 'invisible', '-translate-y-3');
+                        regularNavTop.classList.remove('opacity-0', 'invisible', 'translate-y-3');
+                        regularNavTop.classList.add('opacity-100', 'visible', 'translate-y-0');
+                        if (searchInputTop) searchInputTop.value = '';
+                    }
+                } else if (type === 'floating') {
+                    if (searchBarFloating && regularNavFloating) {
+                        searchBarFloating.classList.remove('opacity-100', 'visible', 'translate-y-0');
+                        searchBarFloating.classList.add('opacity-0', 'invisible', '-translate-y-3');
+                        regularNavFloating.classList.remove('opacity-0', 'invisible', 'translate-y-3');
+                        regularNavFloating.classList.add('opacity-100', 'visible', 'translate-y-0');
+                        if (searchInputFloating) searchInputFloating.value = '';
+                    }
+                }
+            }
+
+            // Event listeners
+            window.addEventListener('scroll', handleScroll, { passive: true });
+
+            if (searchButtonTop) {
+                searchButtonTop.addEventListener('click', () => showSearchBar('top'));
+            }
+            if (searchButtonFloating) {
+                searchButtonFloating.addEventListener('click', () => showSearchBar('floating'));
+            }
+            if (searchCloseTop) {
+                searchCloseTop.addEventListener('click', () => hideSearchBar('top'));
+            }
+            if (searchCloseFloating) {
+                searchCloseFloating.addEventListener('click', () => hideSearchBar('floating'));
+            }
+
+            // Handle search form submission
+            function handleSearchSubmit(e, type) {
+                e.preventDefault();
+                const input = type === 'top' ? searchInputTop : searchInputFloating;
+                if (input && input.value.trim()) {
+                    console.log('Search query:', input.value.trim());
+                    // Add search logic here
+                    hideSearchBar(type);
+                }
+            }
+
+            // Add form submission handlers
+            const searchFormTop = searchBarTop?.querySelector('form');
+            const searchFormFloating = searchBarFloating?.querySelector('form');
+            
+            if (searchFormTop) {
+                searchFormTop.addEventListener('submit', (e) => handleSearchSubmit(e, 'top'));
+            }
+            if (searchFormFloating) {
+                searchFormFloating.addEventListener('submit', (e) => handleSearchSubmit(e, 'floating'));
             }
         });
     </script>
