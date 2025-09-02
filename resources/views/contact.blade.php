@@ -73,7 +73,7 @@
                     </div>
                     
                     <div class="text-center">
-                        <button type="submit" class="bg-cyan-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-cyan-700 transition-colors">
+                        <button type="submit" class="relative overflow-hidden px-8 py-4 border-2 border-cyan-600 bg-transparent text-cyan-600 font-bold text-lg tracking-wide transition-all duration-300 font-overpass whitespace-nowrap hover:text-white water-fill-button">
                             Send Message
                         </button>
                     </div>
