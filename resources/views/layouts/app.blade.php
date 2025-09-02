@@ -77,7 +77,7 @@
                 <!-- Logo -->
                 <div class="flex items-center">
                     <a class="flex items-center" href="{{ route('home') }}">
-                        <div class="text-2xl font-bold text-gray-900 font-overpass">MALADIVE</div>
+                        <img src="{{ asset('images/maladive-logo.png') }}" alt="Maladive Logo" class="h-12 w-auto">
                     </a>
                 </div>
                 
