@@ -21,7 +21,7 @@
             <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
                 <div class="w-16 h-12 flex justify-center items-center">
                     <lottie-player 
-                        src="https://lottie.host/6NiEpowdju/boat.json" 
+                        src="{{ asset('assets/icon/boat.json') }}" 
                         background="transparent" 
                         speed="1" 
                         style="width: 64px; height: 48px;" 
