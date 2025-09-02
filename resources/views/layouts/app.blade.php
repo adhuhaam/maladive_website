@@ -73,23 +73,36 @@
     <!-- Header -->
     <header class="bg-white shadow-sm">
         <div class="container mx-auto px-6 md:px-8 lg:px-12">
-            <div class="flex items-center justify-between h-20">
-                <!-- Logo -->
+            <div class="flex items-center justify-between h-20 relative">
+                <!-- ENQUIRY Button -->
                 <div class="flex items-center">
+                    <a href="{{ route('enquiry') }}">
+                        <button class="relative overflow-hidden px-6 py-3 border-2 border-cyan-600 bg-transparent text-cyan-600 font-bold text-xs tracking-wide transition-all duration-300 font-overpass whitespace-nowrap hover:text-white water-fill-button">
+                            ENQUIRY
+                        </button>
+                    </a>
+                </div>
+                
+                <!-- Logo in Center -->
+                <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
                     <a class="flex items-center" href="{{ route('home') }}">
                         <img src="{{ asset('images/maladive-logo.png') }}" alt="Maladive Logo" class="h-12 w-auto">
                     </a>
                 </div>
                 
-                <!-- Navigation -->
-                <nav class="hidden lg:flex items-center space-x-8">
-                    <a class="text-gray-700 hover:text-cyan-600 font-bold text-sm tracking-wide transition-colors font-overpass" href="{{ route('home') }}">HOME</a>
-                    <a class="text-gray-700 hover:text-cyan-600 font-bold text-sm tracking-wide transition-colors font-overpass" href="{{ route('partner-resorts') }}">PARTNER RESORTS</a>
-                    <a class="text-gray-700 hover:text-cyan-600 font-bold text-sm tracking-wide transition-colors font-overpass" href="{{ route('shop') }}">SHOP</a>
-                    <a class="text-gray-700 hover:text-cyan-600 font-bold text-sm tracking-wide transition-colors font-overpass" href="{{ route('about') }}">ABOUT</a>
-                    <a class="text-gray-700 hover:text-cyan-600 font-bold text-sm tracking-wide transition-colors font-overpass" href="{{ route('contact') }}">CONTACT</a>
+                <!-- Left Navigation -->
+                <nav class="hidden lg:flex items-center space-x-6 xl:space-x-8 absolute left-1/2 transform -translate-x-full pr-16 xl:pr-20">
+                    <a class="text-gray-700 hover:text-cyan-600 font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('home') }}">HOME</a>
+                    <a class="text-gray-700 hover:text-cyan-600 font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('partner-resorts') }}">PARTNER RESORTS</a>
+                    <a class="text-gray-700 hover:text-cyan-600 font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('shop') }}">SHOP</a>
+                </nav>
+                
+                <!-- Right Navigation -->
+                <nav class="hidden lg:flex items-center space-x-6 xl:space-x-8 absolute left-1/2 transform translate-x-0 pl-16 xl:pl-20">
+                    <a class="text-gray-700 hover:text-cyan-600 font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('about') }}">ABOUT</a>
+                    <a class="text-gray-700 hover:text-cyan-600 font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('contact') }}">CONTACT</a>
                     <div class="relative group">
-                        <button class="flex items-center text-gray-700 hover:text-cyan-600 font-bold text-sm tracking-wide transition-colors focus:outline-none font-overpass">
+                        <button class="flex items-center text-gray-700 hover:text-cyan-600 font-bold text-xs tracking-wide transition-colors focus:outline-none font-overpass whitespace-nowrap">
                             SERVICES
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 transition-transform group-hover:rotate-180">
                                 <path d="m6 9 6 6 6-6"></path>
@@ -104,15 +117,6 @@
                         </div>
                     </div>
                 </nav>
-                
-                <!-- ENQUIRY Button -->
-                <div class="flex items-center">
-                    <a href="{{ route('enquiry') }}">
-                        <button class="relative overflow-hidden px-6 py-3 border-2 border-cyan-600 bg-transparent text-cyan-600 font-bold text-xs tracking-wide transition-all duration-300 font-overpass whitespace-nowrap hover:text-white water-fill-button">
-                            ENQUIRY
-                        </button>
-                    </a>
-                </div>
                 
                 <!-- Mobile menu button -->
                 <div class="lg:hidden">
