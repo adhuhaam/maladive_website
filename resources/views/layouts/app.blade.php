@@ -91,14 +91,14 @@
                 </div>
                 
                 <!-- Left Navigation -->
-                <nav class="hidden lg:flex items-center space-x-6 xl:space-x-8 absolute left-1/2 transform -translate-x-full pr-16 xl:pr-20">
+                <nav class="hidden lg:flex items-center space-x-8 absolute left-1/2 transform -translate-x-full pr-24">
                     <a class="text-gray-700 hover:text-cyan-600 font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('home') }}">HOME</a>
                     <a class="text-gray-700 hover:text-cyan-600 font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('partner-resorts') }}">PARTNER RESORTS</a>
                     <a class="text-gray-700 hover:text-cyan-600 font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('shop') }}">SHOP</a>
                 </nav>
                 
                 <!-- Right Navigation -->
-                <nav class="hidden lg:flex items-center space-x-6 xl:space-x-8 absolute left-1/2 transform translate-x-0 pl-16 xl:pl-20">
+                <nav class="hidden lg:flex items-center space-x-8 absolute left-1/2 transform translate-x-0 pl-24">
                     <a class="text-gray-700 hover:text-cyan-600 font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('about') }}">ABOUT</a>
                     <a class="text-gray-700 hover:text-cyan-600 font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="{{ route('contact') }}">CONTACT</a>
                     <div class="relative group">
