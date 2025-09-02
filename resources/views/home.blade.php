@@ -24,7 +24,7 @@
                         src="{{ asset('assets/icon/boat.json') }}" 
                         background="transparent" 
                         speed="1" 
-                        style="width: 64px; height: 48px;" 
+                        style="width: 84px; height: 68px;" 
                         loop 
                         autoplay>
                     </lottie-player>
