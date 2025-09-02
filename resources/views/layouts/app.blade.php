@@ -127,16 +127,21 @@
         
         <!-- Mobile menu -->
         <div class="lg:hidden hidden" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
-                <a href="{{ route('home') }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-cyan-600">HOME</a>
-                <a href="{{ route('partner-resorts') }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-cyan-600">PARTNER RESORTS</a>
-                <a href="{{ route('shop') }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-cyan-600">SHOP</a>
-                <a href="{{ route('about') }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-cyan-600">ABOUT</a>
-                <a href="{{ route('contact') }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-cyan-600">CONTACT</a>
-                <a href="{{ route('watersports') }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-cyan-600">Watersports</a>
-                <a href="{{ route('diving') }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-cyan-600">Diving</a>
-                <a href="{{ route('excursions') }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-cyan-600">Excursions</a>
-                <a href="{{ route('enquiry') }}" class="block px-3 py-2 text-base font-medium text-cyan-600">ENQUIRY</a>
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t shadow-lg">
+                <a href="{{ route('home') }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-cyan-600 hover:bg-gray-50 rounded-md transition-colors">HOME</a>
+                <a href="{{ route('partner-resorts') }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-cyan-600 hover:bg-gray-50 rounded-md transition-colors">PARTNER RESORTS</a>
+                <a href="{{ route('shop') }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-cyan-600 hover:bg-gray-50 rounded-md transition-colors">SHOP</a>
+                <a href="{{ route('about') }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-cyan-600 hover:bg-gray-50 rounded-md transition-colors">ABOUT</a>
+                <a href="{{ route('contact') }}" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-cyan-600 hover:bg-gray-50 rounded-md transition-colors">CONTACT</a>
+                <div class="border-t border-gray-200 my-2"></div>
+                <div class="px-3 py-2">
+                    <span class="text-sm font-semibold text-gray-500 uppercase tracking-wide">Services</span>
+                </div>
+                <a href="{{ route('watersports') }}" class="block px-6 py-2 text-sm font-medium text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-md transition-colors">Watersports</a>
+                <a href="{{ route('diving') }}" class="block px-6 py-2 text-sm font-medium text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-md transition-colors">Diving</a>
+                <a href="{{ route('excursions') }}" class="block px-6 py-2 text-sm font-medium text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-md transition-colors">Excursions</a>
+                <div class="border-t border-gray-200 my-2"></div>
+                <a href="{{ route('enquiry') }}" class="block px-3 py-2 text-base font-medium text-cyan-600 hover:bg-cyan-50 rounded-md transition-colors">ENQUIRY</a>
             </div>
         </div>
     </header>
@@ -225,9 +230,19 @@
     <script src="{{ asset('build/js/app.js') }}"></script>
     <script>
         // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    
+                    // Update aria-expanded attribute
+                    const isExpanded = !mobileMenu.classList.contains('hidden');
+                    mobileMenuButton.setAttribute('aria-expanded', isExpanded);
+                });
+            }
         });
     </script>
     

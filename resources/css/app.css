@@ -77,6 +77,18 @@
     animation-play-state: paused;
 }
 
+/* Mobile menu animations */
+#mobile-menu {
+    transition: all 0.3s ease-in-out;
+    transform: translateY(-10px);
+    opacity: 0;
+}
+
+#mobile-menu:not(.hidden) {
+    transform: translateY(0);
+    opacity: 1;
+}
+
 @layer components {
     /* Custom button styles */
     .btn-primary {

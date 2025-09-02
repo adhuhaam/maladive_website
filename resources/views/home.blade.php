@@ -19,8 +19,23 @@
                 </p>
             </div>
             <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
-                <div class="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-                    <div class="w-1 h-3 bg-white rounded-full mt-2"></div>
+                <div class="w-12 h-8 flex justify-center items-center">
+                    <svg class="w-8 h-6 text-white" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Jet Ski Body (Top View) -->
+                        <ellipse cx="50" cy="30" rx="35" ry="12" fill="currentColor" opacity="0.9"/>
+                        <!-- Jet Ski Nose -->
+                        <ellipse cx="15" cy="30" rx="8" ry="6" fill="currentColor" opacity="0.9"/>
+                        <!-- Jet Ski Handlebar -->
+                        <rect x="45" y="20" width="20" height="2" rx="1" fill="currentColor" opacity="0.8"/>
+                        <rect x="45" y="38" width="20" height="2" rx="1" fill="currentColor" opacity="0.8"/>
+                        <!-- Jet Ski Seat -->
+                        <ellipse cx="40" cy="30" rx="12" ry="8" fill="currentColor" opacity="0.7"/>
+                        <!-- Jet Ski Engine/Back -->
+                        <rect x="70" y="25" width="15" height="10" rx="2" fill="currentColor" opacity="0.8"/>
+                        <!-- Water Spray Effect -->
+                        <path d="M85 20 Q90 15 95 20 Q90 25 85 20" fill="currentColor" opacity="0.6"/>
+                        <path d="M85 40 Q90 35 95 40 Q90 45 85 40" fill="currentColor" opacity="0.6"/>
+                    </svg>
                 </div>
             </div>
         </section>
