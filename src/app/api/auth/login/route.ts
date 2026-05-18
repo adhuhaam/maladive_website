@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { createSession, verifyCredentials } from "@/lib/auth";
+import { resolveDatabaseUrl } from "@/lib/database-url";
 import { prisma } from "@/lib/prisma";
 
 export async function POST(request: Request) {
@@ -11,10 +12,11 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Username and password required" }, { status: 400 });
   }
 
-  if (!process.env.DATABASE_URL) {
+  if (!resolveDatabaseUrl()) {
     return NextResponse.json(
       {
-        error: "DATABASE_URL is not set on the server. Add it in Vercel → Settings → Environment Variables.",
+        error:
+          "Database URL is not set. In Vercel → Environment Variables, add DATABASE_URL or connect Neon so POSTGRES_PRISMA_URL is available.",
         code: "DATABASE_NOT_CONFIGURED",
       },
       { status: 503 },
