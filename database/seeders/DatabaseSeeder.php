@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\ShopCategory;
 use App\Models\ShopProduct;
 use App\Models\PartnerResort;
+use App\Models\SiteSetting;
 use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
@@ -16,11 +17,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // Create admin user
         User::create([
             'name' => 'Admin',
+            'username' => 'admin',
             'email' => 'admin@maladive.com',
             'password' => Hash::make('password'),
+        ]);
+
+        SiteSetting::setMany([
+            'site_name' => 'Maladive',
+            'site_tagline' => 'Premium Watersports Experiences',
+            'hero_title' => 'Experience the Ultimate Watersports Adventure',
+            'hero_subtitle' => 'Discover thrilling watersports activities and premium equipment at the world\'s most beautiful resort destinations',
+            'about_intro' => 'Maladive brings world-class watersports to premier resort destinations across the globe.',
+            'contact_email' => 'info@maladive.com',
+            'contact_phone' => '+960 777 1234',
+            'contact_address' => 'Male, Maldives',
         ]);
 
         // Create shop categories

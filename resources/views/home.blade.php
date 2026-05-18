@@ -12,10 +12,10 @@
             </div>
             <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
                 <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight font-overpass uppercase">
-                    Experience the Ultimate<span class="block text-cyan-600">Watersports Adventure</span>
+                    {{ $siteSettings['hero_title'] ?? 'Experience the Ultimate' }}<span class="block text-cyan-600">Watersports Adventure</span>
                 </h1>
                 <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto leading-relaxed">
-                    Discover thrilling watersports activities and premium equipment at the world's most beautiful resort destinations
+                    {{ $siteSettings['hero_subtitle'] ?? "Discover thrilling watersports activities and premium equipment at the world's most beautiful resort destinations" }}
                 </p>
             </div>
             <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">

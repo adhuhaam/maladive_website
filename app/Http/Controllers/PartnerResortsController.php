@@ -9,6 +9,8 @@ class PartnerResortsController extends Controller
      */
     public function index()
     {
-        return view('partner-resorts');
+        $resorts = \App\Models\PartnerResort::active()->latest()->get();
+
+        return view('partner-resorts', compact('resorts'));
     }
 }

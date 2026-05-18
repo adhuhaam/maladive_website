@@ -9,6 +9,8 @@ class ShopController extends Controller
      */
     public function index()
     {
-        return view('shop');
+        $categories = \App\Models\ShopCategory::active()->ordered()->with(['products' => fn ($q) => $q->active()->ordered()])->get();
+
+        return view('shop', compact('categories'));
     }
 }

@@ -8,11 +8,6 @@ use App\Models\Enquiry;
 
 class EnquiryController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
         $enquiries = Enquiry::latest()->paginate(20);
