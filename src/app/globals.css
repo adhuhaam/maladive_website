@@ -11,3 +11,11 @@ body {
 .water-fill-button:hover {
   background-color: #06e6da;
 }
+
+/* Prevent nav link focus rings from clipping/overlapping adjacent items */
+#regular-nav-top a,
+#regular-nav-floating a,
+#regular-nav-top button,
+#regular-nav-floating button {
+  outline: none;
+}
