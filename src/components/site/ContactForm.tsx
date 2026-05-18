@@ -60,9 +60,9 @@ export function ContactForm() {
       <div className="text-center">
         <button
           type="submit"
-          className="relative overflow-hidden px-8 py-4 border-2 border-cyan-600 bg-transparent text-cyan-600 font-bold text-lg tracking-wide transition-all duration-300 font-overpass whitespace-nowrap hover:text-white water-fill-button"
+          className="relative overflow-hidden px-8 py-4 border-2 border-[#06e6da] bg-transparent text-[#06e6da] font-bold text-sm tracking-wide transition-all duration-300 font-overpass whitespace-nowrap water-fill-button w-full sm:w-auto"
         >
-          Send Message
+          <span className="relative z-10 transition-colors duration-500">Send Message</span>
         </button>
       </div>
     </form>

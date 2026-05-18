@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { OptimizedImage } from "@/components/ui/OptimizedImage";
 import { ActivityTagsExpandable } from "../ActivityTagsExpandable";
+import { WaterButtonLink } from "../WaterButton";
 import type { PartnerResortItem } from "../types";
 
 function StarRating({ score }: { score: number }) {
@@ -117,21 +117,25 @@ function ResortCard({ resort }: { resort: PartnerResortItem }) {
           {resort.contactEmail && <span>{resort.contactEmail}</span>}
         </div>
 
-        <div className="flex flex-wrap gap-3 mt-8">
-          <Link
-            href={`/resorts/${resort.slug}`}
-            className="inline-block px-8 py-3.5 bg-[#06e6da] text-white font-bold text-xs uppercase tracking-widest hover:bg-cyan-500 transition-colors"
-          >
+        <div className="flex flex-col sm:flex-row flex-wrap gap-3 mt-8">
+          <WaterButtonLink href={`/resorts/${resort.slug}`} size="md" className="text-center">
             View Details
-          </Link>
+          </WaterButtonLink>
           {resort.website && (
             <a
               href={resort.website}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-8 py-3.5 border-2 border-[#06e6da] text-[#06e6da] font-bold text-xs uppercase tracking-widest hover:bg-[#e6faf9] transition-colors"
+              className="relative overflow-hidden inline-flex items-center justify-center border-2 border-[#06e6da] bg-transparent text-[#06e6da] font-bold text-xs uppercase tracking-widest px-8 py-3.5 font-overpass water-fill-button hover:text-white transition-all duration-300 text-center"
             >
-              Visit Website
+              <span className="relative z-10 flex items-center justify-center gap-2 transition-colors duration-500">
+                Visit Website
+                <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                  <polyline points="15 3 21 3 21 9" />
+                  <line x1="10" y1="14" x2="21" y2="3" />
+                </svg>
+              </span>
             </a>
           )}
         </div>
@@ -156,28 +160,27 @@ export function ResortsPage({ resorts }: { resorts: PartnerResortItem[] }) {
       </section>
 
       <section className="py-12 md:py-16 bg-[#fafafa]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-12 md:space-y-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 xl:grid-cols-2 gap-8 md:gap-10">
           {resorts.map((resort) => (
             <ResortCard key={resort.id} resort={resort} />
           ))}
           {resorts.length === 0 && (
-            <p className="text-center text-gray-500 py-16">Partner resorts coming soon.</p>
+            <p className="text-center text-gray-500 py-16 xl:col-span-2">Partner resorts coming soon.</p>
           )}
         </div>
       </section>
 
-      <section className="py-16 bg-[#0f2744] text-white text-center">
+      <section className="py-14 md:py-16 bg-gradient-to-r from-cyan-500 to-cyan-700 text-white text-center">
         <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold font-overpass mb-4">Ready to Experience Paradise?</h2>
-          <p className="text-cyan-100/90 mb-8 text-sm md:text-base">
+          <h2 className="text-2xl md:text-3xl font-bold font-overpass mb-4 uppercase">
+            Ready to Experience Paradise?
+          </h2>
+          <p className="text-cyan-50/95 mb-8 text-sm md:text-base leading-relaxed">
             Contact us today to plan your perfect watersports vacation at any of our partner resorts.
           </p>
-          <Link
-            href="/enquiry"
-            className="inline-block px-10 py-4 bg-[#06e6da] text-white font-bold uppercase tracking-widest text-xs hover:bg-cyan-400 transition-colors"
-          >
-            Get in touch
-          </Link>
+          <WaterButtonLink href="/enquiry" size="lg" className="!border-white !text-white hover:!text-white">
+            Start Your Enquiry
+          </WaterButtonLink>
         </div>
       </section>
     </>

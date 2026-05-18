@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: "Maladive - Premium Watersports Experiences",
   description:
     "Premium watersports experiences and equipment at the world's most beautiful resort destinations.",
+  viewport: { width: "device-width", initialScale: 1, maximumScale: 5 },
 };
 
 export default function RootLayout({

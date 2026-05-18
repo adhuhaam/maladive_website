@@ -8,8 +8,67 @@ body {
   font-family: var(--font-overpass);
 }
 
+/* Enquiry-style water fill button (matches legacy site animation) */
+.water-fill-button {
+  background-image: url(/images/nav-bg-fill-blue.png);
+  background-repeat: repeat-x;
+  background-position: 0 -100%;
+  background-size: 100% 200%;
+  transition: all 1.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.water-fill-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s ease;
+}
+
+.water-fill-button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.6s ease;
+}
+
 .water-fill-button:hover {
-  background-color: #06e6da;
+  background-position: 0 0;
+}
+
+.water-fill-button:hover::before {
+  left: 100%;
+}
+
+.water-fill-button:hover::after {
+  width: 300px;
+  height: 300px;
+  animation: water-ripple 0.6s ease-out;
+}
+
+.water-fill-button:hover span {
+  color: #fff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes water-ripple {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 /* Prevent nav link focus rings from clipping/overlapping adjacent items */

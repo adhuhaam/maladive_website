@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { SiteCartLink } from "./SiteCartLink";
 import { SiteNavCenter } from "./SiteNavLinks";
 
 export function SiteHeader({ settings }: { settings: Record<string, string> }) {
@@ -95,7 +96,8 @@ export function SiteHeader({ settings }: { settings: Record<string, string> }) {
                 <div className="flex-1 flex justify-center min-w-0 px-2">
                     <SiteNavCenter />
                 </div>
-                    <div className="flex items-center justify-end shrink-0 z-20 min-w-[7rem]">
+                    <div className="flex items-center justify-end gap-1 shrink-0 z-20 min-w-[7rem]">
+                        <SiteCartLink />
                         <button id="search-button-top" type="button" className="inline-flex items-center justify-center rounded-md h-10 w-10 text-gray-700 hover:text-[#06e6da] hover:bg-gray-50 transition-colors outline-none focus:outline-none">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-search w-5 h-5">
                                 <circle cx="11" cy="11" r="8"></circle>
@@ -184,6 +186,7 @@ export function SiteHeader({ settings }: { settings: Record<string, string> }) {
                 <Link href="/" className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-cyan-600 hover:bg-gray-50 rounded-md transition-colors">HOME</Link>
                 <Link href="/resorts" className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-cyan-600 hover:bg-gray-50 rounded-md transition-colors">PARTNER RESORTS</Link>
                 <Link href="/shop" className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-cyan-600 hover:bg-gray-50 rounded-md transition-colors">SHOP</Link>
+                <Link href="/shop/quote" className="block px-6 py-2 text-sm font-medium text-cyan-600 hover:bg-cyan-50 rounded-md transition-colors">Quote cart</Link>
                 <Link href="/about" className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-cyan-600 hover:bg-gray-50 rounded-md transition-colors">ABOUT</Link>
                 <Link href="/contact" className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-cyan-600 hover:bg-gray-50 rounded-md transition-colors">CONTACT</Link>
                 <div className="border-t border-gray-200 my-2"></div>

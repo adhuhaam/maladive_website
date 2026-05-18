@@ -48,8 +48,8 @@ export function EnquiryForm() {
         <textarea id="message" name="message" rows={5} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Tell us more about your requirements..." />
       </div>
       <div className="text-center">
-        <button type="submit" className="relative overflow-hidden px-8 py-4 border-2 border-blue-600 bg-transparent text-blue-600 font-bold text-lg tracking-wide transition-all duration-300 font-overpass whitespace-nowrap hover:text-white water-fill-button">
-          Submit Enquiry
+        <button type="submit" className="relative overflow-hidden px-8 py-4 border-2 border-[#06e6da] bg-transparent text-[#06e6da] font-bold text-sm tracking-wide transition-all duration-300 font-overpass whitespace-nowrap water-fill-button">
+          <span className="relative z-10 transition-colors duration-500">Submit Enquiry</span>
         </button>
       </div>
     </form>
