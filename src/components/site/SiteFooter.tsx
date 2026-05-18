@@ -41,7 +41,7 @@ export function SiteFooter() {
                 <div>
                     <h3 className="text-xl font-bold mb-4 font-overpass uppercase">Quick Links</h3>
                     <ul className="space-y-2">
-                        <li><Link className="text-gray-400 hover:text-cyan-400 transition-colors font-overpass font-light" href="/partner-resorts">Partner Resorts</Link></li>
+                        <li><Link className="text-gray-400 hover:text-cyan-400 transition-colors font-overpass font-light" href="/resorts">Partner Resorts</Link></li>
                         <li><Link className="text-gray-400 hover:text-cyan-400 transition-colors font-overpass font-light" href="/shop">Equipment Shop</Link></li>
                         <li><Link className="text-gray-400 hover:text-cyan-400 transition-colors font-overpass font-light" href="/about">About Us</Link></li>
                         <li><Link className="text-gray-400 hover:text-cyan-400 transition-colors font-overpass font-light" href="/contact">Contact</Link></li>

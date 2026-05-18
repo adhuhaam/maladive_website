@@ -4,6 +4,8 @@ const links = [
   { href: "/admin", label: "Dashboard" },
   { href: "/admin/enquiries", label: "Enquiries" },
   { href: "/admin/contacts", label: "Contacts" },
+  { href: "/admin/quote-requests", label: "Quote Requests" },
+  { href: "/admin/partner-brands", label: "Partner Brands" },
   { href: "/admin/partner-resorts", label: "Partner Resorts" },
   { href: "/admin/shop-categories", label: "Shop Categories" },
   { href: "/admin/shop-products", label: "Shop Products" },

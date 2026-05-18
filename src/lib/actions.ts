@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "./prisma";
 import { setSiteSettings } from "./settings";
+import { sendQuoteToTelegram } from "./telegram";
 
 export async function submitEnquiry(formData: FormData) {
   await prisma.enquiry.create({
@@ -42,6 +43,52 @@ export async function subscribeNewsletter(formData: FormData) {
     create: { email },
     update: {},
   });
+}
+
+export async function submitQuoteRequest(data: {
+  name: string;
+  email: string;
+  phone: string;
+  company?: string;
+  items: { productId: number; quantity: number }[];
+}) {
+  const products = await prisma.shopProduct.findMany({
+    where: { id: { in: data.items.map((i) => i.productId) } },
+  });
+
+  const itemDetails = data.items.map((cartItem) => {
+    const p = products.find((x) => x.id === cartItem.productId);
+    if (!p) throw new Error("Invalid product in cart");
+    const price = Number(p.salePrice ?? p.price);
+    return {
+      name: p.name,
+      sku: p.sku,
+      quantity: cartItem.quantity,
+      price,
+    };
+  });
+
+  const telegramSent = await sendQuoteToTelegram({
+    name: data.name,
+    email: data.email,
+    phone: data.phone,
+    company: data.company,
+    items: itemDetails,
+  });
+
+  await prisma.quoteRequest.create({
+    data: {
+      name: data.name,
+      email: data.email,
+      phone: data.phone,
+      company: data.company ?? null,
+      items: itemDetails,
+      telegramSent,
+    },
+  });
+
+  revalidatePath("/admin/quote-requests");
+  return { ok: true, telegramSent };
 }
 
 export async function updateEnquiry(id: number, formData: FormData) {
