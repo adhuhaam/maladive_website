@@ -51,23 +51,52 @@ model Contact {
   @@map("contacts")
 }
 
+model PartnerBrand {
+  id        Int      @id @default(autoincrement())
+  name      String
+  logoUrl   String?  @map("logo_url")
+  initials  String?
+  sortOrder Int      @default(0) @map("sort_order")
+  isActive  Boolean  @default(true) @map("is_active")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("partner_brands")
+}
+
 model PartnerResort {
-  id           Int      @id @default(autoincrement())
-  name         String
-  location     String
-  country      String
-  description  String
-  image        String?
-  rating       String   @default("4")
-  status       String   @default("active")
-  amenities    Json?
-  activities   Json?
-  website      String?
-  contactEmail String?  @map("contact_email")
-  contactPhone String?  @map("contact_phone")
-  adminNotes   String?  @map("admin_notes")
-  createdAt    DateTime @default(now()) @map("created_at")
-  updatedAt    DateTime @updatedAt @map("updated_at")
+  id                   Int      @id @default(autoincrement())
+  slug                 String   @unique
+  name                 String
+  location             String
+  country              String
+  description          String
+  image                String?
+  gallery              Json?
+  rating               String   @default("4")
+  reviewScore          String?  @map("review_score")
+  reviewCount          Int?     @map("review_count")
+  priceMin             Decimal? @map("price_min") @db.Decimal(10, 2)
+  priceMax             Decimal? @map("price_max") @db.Decimal(10, 2)
+  priceTier            String?  @map("price_tier")
+  partnerSince         String?  @map("partner_since")
+  status               String   @default("active")
+  amenities            Json?
+  activities           Json?
+  watersportsActivities Json?   @map("watersports_activities")
+  divingActivities     Json?    @map("diving_activities")
+  excursionActivities  Json?    @map("excursion_activities")
+  website              String?
+  contactEmail         String?  @map("contact_email")
+  contactPhone         String?  @map("contact_phone")
+  established          String?
+  totalRooms           String?  @map("total_rooms")
+  checkIn              String?  @map("check_in")
+  checkOut             String?  @map("check_out")
+  awards               Json?
+  adminNotes           String?  @map("admin_notes")
+  createdAt            DateTime @default(now()) @map("created_at")
+  updatedAt            DateTime @updatedAt @map("updated_at")
 
   @@map("partner_resorts")
 }
@@ -88,26 +117,43 @@ model ShopCategory {
 }
 
 model ShopProduct {
-  id             Int          @id @default(autoincrement())
-  name           String
-  slug           String       @unique
-  description    String
-  price          Decimal      @db.Decimal(10, 2)
-  salePrice      Decimal?     @map("sale_price") @db.Decimal(10, 2)
-  sku            String       @unique
-  stockQuantity  Int          @default(0) @map("stock_quantity")
-  categoryId     Int          @map("category_id")
-  category       ShopCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
-  brand          String?
-  model          String?
-  status         String       @default("active")
-  isFeatured     Boolean      @default(false) @map("is_featured")
-  sortOrder      Int          @default(0) @map("sort_order")
-  adminNotes     String?      @map("admin_notes")
-  createdAt      DateTime     @default(now()) @map("created_at")
-  updatedAt      DateTime     @updatedAt @map("updated_at")
+  id            Int          @id @default(autoincrement())
+  name          String
+  slug          String       @unique
+  description   String
+  price         Decimal      @db.Decimal(10, 2)
+  salePrice     Decimal?     @map("sale_price") @db.Decimal(10, 2)
+  sku           String       @unique
+  stockQuantity Int          @default(0) @map("stock_quantity")
+  image         String?
+  categoryId    Int          @map("category_id")
+  category      ShopCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  brand         String?
+  model         String?
+  status        String       @default("active")
+  isFeatured    Boolean      @default(false) @map("is_featured")
+  sortOrder     Int          @default(0) @map("sort_order")
+  adminNotes    String?      @map("admin_notes")
+  createdAt     DateTime     @default(now()) @map("created_at")
+  updatedAt     DateTime     @updatedAt @map("updated_at")
 
   @@map("shop_products")
+}
+
+model QuoteRequest {
+  id          Int      @id @default(autoincrement())
+  name        String
+  email       String
+  phone       String
+  company     String?
+  items       Json
+  status      String   @default("new")
+  telegramSent Boolean @default(false) @map("telegram_sent")
+  adminNotes  String?  @map("admin_notes")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@map("quote_requests")
 }
 
 model SiteSetting {

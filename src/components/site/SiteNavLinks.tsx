@@ -57,7 +57,7 @@ export function SiteNavCenter({ compact = false }: { compact?: boolean }) {
         <Link href="/" className={navLink}>
           HOME
         </Link>
-        <Link href="/partner-resorts" className={navLink}>
+        <Link href="/resorts" className={navLink}>
           PARTNER RESORTS
         </Link>
         <Link href="/shop" className={navLink}>

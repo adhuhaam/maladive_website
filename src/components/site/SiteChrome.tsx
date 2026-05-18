@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { CartProvider } from "@/context/CartContext";
 import { SiteHeader } from "./SiteHeader";
 import { SiteFooter } from "./SiteFooter";
 
@@ -16,10 +17,10 @@ export function SiteChrome({
   }, []);
 
   return (
-    <>
+    <CartProvider>
       <SiteHeader settings={settings} />
       <main className="animate-fadeIn">{children}</main>
       <SiteFooter />
-    </>
+    </CartProvider>
   );
 }
