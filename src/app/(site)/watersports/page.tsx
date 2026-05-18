@@ -1,18 +1,9 @@
-import { PageHero } from "@/components/PageHero";
-import Link from "next/link";
+import { WatersportsPage } from "@/components/site/pages/WatersportsPage";
+import { getSiteSettings } from "@/lib/settings";
 
-export default function WatersportsPage() {
-  return (
-    <>
-      <PageHero title="Watersports" subtitle="Jet skis, kayaks, paddleboards and more" />
-      <section className="py-16 max-w-3xl mx-auto px-4 text-center">
-        <p className="text-gray-600 mb-8">
-          Experience adrenaline-pumping watersports at our partner resorts worldwide.
-        </p>
-        <Link href="/enquiry" className="inline-block bg-cyan-600 text-white px-8 py-3 rounded-lg font-bold">
-          Request a Quote
-        </Link>
-      </section>
-    </>
-  );
+export const dynamic = "force-dynamic";
+
+export default async function Page() {
+  const settings = await getSiteSettings();
+  return <WatersportsPage settings={settings} />;
 }

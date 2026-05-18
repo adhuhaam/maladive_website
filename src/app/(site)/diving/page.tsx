@@ -1,16 +1,9 @@
-import { PageHero } from "@/components/PageHero";
-import Link from "next/link";
+import { DivingPage } from "@/components/site/pages/DivingPage";
+import { getSiteSettings } from "@/lib/settings";
 
-export default function DivingPage() {
-  return (
-    <>
-      <PageHero title="Diving" subtitle="Discover the underwater world" />
-      <section className="py-16 max-w-3xl mx-auto px-4 text-center">
-        <p className="text-gray-600 mb-8">Professional diving experiences for all skill levels.</p>
-        <Link href="/enquiry" className="inline-block bg-cyan-600 text-white px-8 py-3 rounded-lg font-bold">
-          Request a Quote
-        </Link>
-      </section>
-    </>
-  );
+export const dynamic = "force-dynamic";
+
+export default async function Page() {
+  const settings = await getSiteSettings();
+  return <DivingPage settings={settings} />;
 }
