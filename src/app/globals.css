@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  --font-overpass: "Overpass", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-overpass);
+}
+
+.water-fill-button:hover {
+  background-color: #06e6da;
+}

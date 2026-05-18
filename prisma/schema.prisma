@@ -1,0 +1,130 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  username  String   @unique
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("users")
+}
+
+model Enquiry {
+  id           Int      @id @default(autoincrement())
+  name         String
+  email        String
+  phone        String?
+  service      String
+  destination  String?
+  dates        String?
+  participants Int?
+  message      String?
+  status       String   @default("new")
+  adminNotes   String?  @map("admin_notes")
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  @@map("enquiries")
+}
+
+model Contact {
+  id         Int      @id @default(autoincrement())
+  name       String
+  email      String
+  subject    String
+  message    String
+  status     String   @default("new")
+  adminNotes String?  @map("admin_notes")
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+
+  @@map("contacts")
+}
+
+model PartnerResort {
+  id           Int      @id @default(autoincrement())
+  name         String
+  location     String
+  country      String
+  description  String
+  image        String?
+  rating       String   @default("4")
+  status       String   @default("active")
+  amenities    Json?
+  activities   Json?
+  website      String?
+  contactEmail String?  @map("contact_email")
+  contactPhone String?  @map("contact_phone")
+  adminNotes   String?  @map("admin_notes")
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  @@map("partner_resorts")
+}
+
+model ShopCategory {
+  id          Int           @id @default(autoincrement())
+  name        String
+  slug        String        @unique
+  description String?
+  image       String?
+  sortOrder   Int           @default(0) @map("sort_order")
+  isActive    Boolean       @default(true) @map("is_active")
+  products    ShopProduct[]
+  createdAt   DateTime      @default(now()) @map("created_at")
+  updatedAt   DateTime      @updatedAt @map("updated_at")
+
+  @@map("shop_categories")
+}
+
+model ShopProduct {
+  id             Int          @id @default(autoincrement())
+  name           String
+  slug           String       @unique
+  description    String
+  price          Decimal      @db.Decimal(10, 2)
+  salePrice      Decimal?     @map("sale_price") @db.Decimal(10, 2)
+  sku            String       @unique
+  stockQuantity  Int          @default(0) @map("stock_quantity")
+  categoryId     Int          @map("category_id")
+  category       ShopCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  brand          String?
+  model          String?
+  status         String       @default("active")
+  isFeatured     Boolean      @default(false) @map("is_featured")
+  sortOrder      Int          @default(0) @map("sort_order")
+  adminNotes     String?      @map("admin_notes")
+  createdAt      DateTime     @default(now()) @map("created_at")
+  updatedAt      DateTime     @updatedAt @map("updated_at")
+
+  @@map("shop_products")
+}
+
+model SiteSetting {
+  id        Int      @id @default(autoincrement())
+  key       String   @unique
+  value     String?
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("site_settings")
+}
+
+model NewsletterSubscriber {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("newsletter_subscribers")
+}
