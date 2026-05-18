@@ -1,4 +1,6 @@
+import { unstable_cache } from "next/cache";
 import { prisma } from "./prisma";
+import { SITE_REVALIDATE } from "./cache";
 
 const defaults: Record<string, string> = {
   site_name: "Maladive",
@@ -13,7 +15,7 @@ const defaults: Record<string, string> = {
   contact_address: "H.Alimas Ge, K.Male' Maldives",
 };
 
-export async function getSiteSettings(): Promise<Record<string, string>> {
+async function fetchSiteSettings(): Promise<Record<string, string>> {
   try {
     const rows = await prisma.siteSetting.findMany();
     const settings = { ...defaults };
@@ -25,6 +27,10 @@ export async function getSiteSettings(): Promise<Record<string, string>> {
     return { ...defaults };
   }
 }
+
+export const getSiteSettings = unstable_cache(fetchSiteSettings, ["site-settings"], {
+  revalidate: SITE_REVALIDATE,
+});
 
 export async function setSiteSettings(data: Record<string, string>) {
   for (const [key, value] of Object.entries(data)) {

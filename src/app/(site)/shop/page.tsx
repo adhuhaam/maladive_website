@@ -1,7 +1,7 @@
 import { ShopClient } from "@/components/shop/ShopClient";
 import { getShopCategories, getShopProducts } from "@/lib/shop";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 
 export default async function ShopPage() {
   const [products, categories] = await Promise.all([getShopProducts(), getShopCategories()]);
