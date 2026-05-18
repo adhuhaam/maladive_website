@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { SiteNavCenter } from "./SiteNavLinks";
 
 export function SiteHeader({ settings }: { settings: Record<string, string> }) {
   return (
@@ -83,65 +84,19 @@ export function SiteHeader({ settings }: { settings: Record<string, string> }) {
                 </div>
                 
                 {/*  Regular Navigation with Slower Fade  */}
-                <div id="regular-nav-top" className="w-full flex items-center justify-between transition-all duration-700 ease-in-out opacity-100 visible transform translate-y-0">
-                    {/*  Left Side - Enquiry Button  */}
-                <div className="flex items-center min-w-0">
+                <div id="regular-nav-top" className="w-full flex items-center justify-between gap-4 transition-all duration-700 ease-in-out opacity-100 visible translate-y-0">
+                    <div className="flex items-center shrink-0 z-20 min-w-[7rem]">
                     <Link href="/enquiry">
-                        <button className="relative overflow-hidden px-6 py-3 border-2 border-[#06e6da] bg-transparent text-[#06e6da] font-bold text-xs tracking-wide transition-all duration-300 font-overpass whitespace-nowrap hover:text-white water-fill-button">
+                        <button type="button" className="relative overflow-hidden px-6 py-3 border-2 border-[#06e6da] bg-transparent text-[#06e6da] font-bold text-xs tracking-wide transition-all duration-300 font-overpass whitespace-nowrap hover:text-white water-fill-button">
                             ENQUIRY
                         </button>
                     </Link>
                 </div>
-                
-                {/*  Logo in Center  */}
-                <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-                    <Link className="flex items-center" href="/">
-                        <div className="relative w-24 h-20">
-                            <img src="/images/maladive-logo.png" alt="Maladive Logo" className="object-contain" style={{position: 'absolute', height: '100%', width: '100%', left: '0', top: '0', right: '0', bottom: '0', color: 'transparent'}} />
-                        </div>
-                    </Link>
+                <div className="flex-1 flex justify-center min-w-0 px-2">
+                    <SiteNavCenter />
                 </div>
-                
-                {/*  Left Navigation  */}
-                <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8 absolute left-1/2 transform -translate-x-full pr-16 xl:pr-20">
-                    <Link className="text-gray-700 hover:text-[#06e6da] font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="/">HOME</Link>
-                    <Link className="text-gray-700 hover:text-[#06e6da] font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="/partner-resorts">PARTNER RESORTS</Link>
-                    <Link className="text-gray-700 hover:text-[#06e6da] font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="/shop">SHOP</Link>
-                </nav>
-                
-                {/*  Right Navigation  */}
-                <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8 absolute left-1/2 transform translate-x-0 pl-16 xl:pl-20">
-                    <Link className="text-gray-700 hover:text-[#06e6da] font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="/about">ABOUT</Link>
-                    <Link className="text-gray-700 hover:text-[#06e6da] font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="/contact">CONTACT</Link>
-                    <div className="relative group">
-                        <button className="flex items-center text-gray-700 hover:text-[#06e6da] font-bold text-xs tracking-wide transition-colors focus:outline-none font-overpass whitespace-nowrap">
-                            SERVICES
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-down w-4 h-4 ml-1 transition-transform group-hover:rotate-180">
-                                <path d="m6 9 6 6 6-6"></path>
-                            </svg>
-                        </button>
-                        <div className="absolute w-56 bg-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out transform group-hover:translate-y-0 overflow-hidden z-50 top-10 left-0 shadow-lg mt-2">
-                            <div className="py-3">
-                                <Link className="relative group/item flex items-center px-6 py-3 text-sm text-gray-600 hover:text-[#06e6da] transition-all duration-300 font-normal font-overpass border-b border-gray-100 last:border-b-0 hover:bg-cyan-50/30" href="/watersports">
-                                    <div className="w-2 h-2 rounded-full bg-cyan-600 opacity-0 group-hover/item:opacity-100 transition-all duration-300 mr-0 group-hover/item:mr-3 transform -translate-x-2 group-hover/item:translate-x-0"></div>
-                                    <span className="transform transition-all duration-300 ease-out group-hover/item:translate-x-2">Watersports</span>
-                                </Link>
-                                <Link className="relative group/item flex items-center px-6 py-3 text-sm text-gray-600 hover:text-[#06e6da] transition-all duration-300 font-normal font-overpass border-b border-gray-100 last:border-b-0 hover:bg-cyan-50/30" href="/diving">
-                                    <div className="w-2 h-2 rounded-full bg-cyan-600 opacity-0 group-hover/item:opacity-100 transition-all duration-300 mr-0 group-hover/item:mr-3 transform -translate-x-2 group-hover/item:translate-x-0"></div>
-                                    <span className="transform transition-all duration-300 ease-out group-hover/item:translate-x-2">Diving</span>
-                                </Link>
-                                <Link className="relative group/item flex items-center px-6 py-3 text-sm text-gray-600 hover:text-[#06e6da] transition-all duration-300 font-normal font-overpass border-b border-gray-100 last:border-b-0 hover:bg-cyan-50/30" href="/excursions">
-                                    <div className="w-2 h-2 rounded-full bg-cyan-600 opacity-0 group-hover/item:opacity-100 transition-all duration-300 mr-0 group-hover/item:mr-3 transform -translate-x-2 group-hover/item:translate-x-0"></div>
-                                    <span className="transform transition-all duration-300 ease-out group-hover/item:translate-x-2">Excursions</span>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
-                
-                    {/*  Right Side - Search Button  */}
-                    <div className="flex items-center min-w-0">
-                        <button id="search-button-top" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent h-10 w-10 text-gray-700 hover:text-[#06e6da]">
+                    <div className="flex items-center justify-end shrink-0 z-20 min-w-[7rem]">
+                        <button id="search-button-top" type="button" className="inline-flex items-center justify-center rounded-md h-10 w-10 text-gray-700 hover:text-[#06e6da] hover:bg-gray-50 transition-colors outline-none focus:outline-none">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-search w-5 h-5">
                                 <circle cx="11" cy="11" r="8"></circle>
                                 <path d="m21 21-4.3-4.3"></path>
@@ -150,7 +105,7 @@ export function SiteHeader({ settings }: { settings: Record<string, string> }) {
                     </div>
                 </div>
                 
-                {/*  Mobile menu button  */}
+                                {/*  Mobile menu button  */}
                 <div className="absolute right-0 lg:hidden z-20">
                     <button id="mobile-menu-button" className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground bg-cyan-400 hover:bg-cyan-500 text-white rounded-none w-12 h-12" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-«R1pdb»" data-state="closed">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-menu w-6 h-6">
@@ -188,66 +143,19 @@ export function SiteHeader({ settings }: { settings: Record<string, string> }) {
                 </div>
                 
                 {/*  Regular Floating Navigation with Slower Fade  */}
-                <div id="regular-nav-floating" className="w-full flex items-center justify-between transition-all duration-700 ease-in-out opacity-100 visible transform translate-y-0">
-                    {/*  Left Side - Enquiry Button  */}
-                    <div className="flex items-center min-w-0">
+                <div id="regular-nav-floating" className="w-full flex items-center justify-between gap-4 transition-all duration-700 ease-in-out opacity-100 visible translate-y-0">
+                    <div className="flex items-center shrink-0 z-20 min-w-[6rem]">
                         <Link href="/enquiry">
-                            <button className="relative overflow-hidden px-3 py-2 border-2 border-[#06e6da] bg-transparent text-[#06e6da] font-bold text-xs tracking-wide transition-all duration-300 font-overpass whitespace-nowrap hover:text-white water-fill-button">
+                            <button type="button" className="relative overflow-hidden px-3 py-2 border-2 border-[#06e6da] bg-transparent text-[#06e6da] font-bold text-xs tracking-wide transition-all duration-300 font-overpass whitespace-nowrap hover:text-white water-fill-button">
                                 ENQUIRY
                             </button>
                         </Link>
                     </div>
-                    
-                    {/*  Center - Logo and Navigation  */}
-                    {/*  Absolutely Centered Logo  */}
-                    <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-                        <Link className="flex items-center" href="/">
-                            <div className="relative w-20 h-16">
-                                <img src="/images/maladive-logo.png" alt="Maladive Logo" className="object-contain" style={{position: 'absolute', height: '100%', width: '100%', left: '0', top: '0', right: '0', bottom: '0', color: 'transparent'}} />
-                            </div>
-                        </Link>
+                    <div className="flex-1 flex justify-center min-w-0 px-2">
+                        <SiteNavCenter compact />
                     </div>
-                    
-                    {/*  Left Navigation - Positioned to avoid logo  */}
-                    <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6 absolute left-1/2 transform -translate-x-full pr-12 xl:pr-16">
-                        <Link className="text-gray-700 hover:text-[#06e6da] font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="/">HOME</Link>
-                        <Link className="text-gray-700 hover:text-[#06e6da] font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="/partner-resorts">PARTNER RESORTS</Link>
-                        <Link className="text-gray-700 hover:text-[#06e6da] font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="/shop">SHOP</Link>
-                    </nav>
-                    
-                    {/*  Right Navigation - Positioned to avoid logo  */}
-                    <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6 absolute left-1/2 transform translate-x-0 pl-12 xl:pl-16">
-                        <Link className="text-gray-700 hover:text-[#06e6da] font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="/about">ABOUT</Link>
-                        <Link className="text-gray-700 hover:text-[#06e6da] font-bold text-xs tracking-wide transition-colors font-overpass whitespace-nowrap" href="/contact">CONTACT</Link>
-                        <div className="relative group">
-                            <button className="flex items-center text-gray-700 hover:text-[#06e6da] font-bold text-xs tracking-wide transition-colors focus:outline-none font-overpass whitespace-nowrap">
-                                SERVICES
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-down w-3 h-3 ml-1 transition-transform group-hover:rotate-180">
-                                    <path d="m6 9 6 6 6-6"></path>
-                                </svg>
-                            </button>
-                            <div className="absolute w-56 bg-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out transform group-hover:translate-y-0 overflow-hidden z-50 top-10 left-0 shadow-lg mt-2">
-                                <div className="py-3">
-                                    <Link className="relative group/item flex items-center px-6 py-3 text-sm text-gray-600 hover:text-[#06e6da] transition-all duration-300 font-normal font-overpass border-b border-gray-100 last:border-b-0 hover:bg-cyan-50/30" href="/watersports">
-                                        <div className="w-2 h-2 rounded-full bg-cyan-600 opacity-0 group-hover/item:opacity-100 transition-all duration-300 mr-0 group-hover/item:mr-3 transform -translate-x-2 group-hover/item:translate-x-0"></div>
-                                        <span className="transform transition-all duration-300 ease-out group-hover/item:translate-x-2">Watersports</span>
-                                    </Link>
-                                    <Link className="relative group/item flex items-center px-6 py-3 text-sm text-gray-600 hover:text-[#06e6da] transition-all duration-300 font-normal font-overpass border-b border-gray-100 last:border-b-0 hover:bg-cyan-50/30" href="/diving">
-                                        <div className="w-2 h-2 rounded-full bg-cyan-600 opacity-0 group-hover/item:opacity-100 transition-all duration-300 mr-0 group-hover/item:mr-3 transform -translate-x-2 group-hover/item:translate-x-0"></div>
-                                        <span className="transform transition-all duration-300 ease-out group-hover/item:translate-x-2">Diving</span>
-                                    </Link>
-                                    <Link className="relative group/item flex items-center px-6 py-3 text-sm text-gray-600 hover:text-[#06e6da] transition-all duration-300 font-normal font-overpass border-b border-gray-100 last:border-b-0 hover:bg-cyan-50/30" href="/excursions">
-                                        <div className="w-2 h-2 rounded-full bg-cyan-600 opacity-0 group-hover/item:opacity-100 transition-all duration-300 mr-0 group-hover/item:mr-3 transform -translate-x-2 group-hover/item:translate-x-0"></div>
-                                        <span className="transform transition-all duration-300 ease-out group-hover/item:translate-x-2">Excursions</span>
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                    </nav>
-                    
-                    {/*  Right Side - Search Button  */}
-                    <div className="flex items-center min-w-0">
-                        <button id="search-button-floating" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent text-gray-700 hover:text-[#06e6da] w-8 h-8">
+                    <div className="flex items-center justify-end shrink-0 z-20 min-w-[6rem]">
+                        <button id="search-button-floating" type="button" className="inline-flex items-center justify-center rounded-md h-8 w-8 text-gray-700 hover:text-[#06e6da] hover:bg-gray-50 transition-colors outline-none focus:outline-none">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-search w-4 h-4">
                                 <circle cx="11" cy="11" r="8"></circle>
                                 <path d="m21 21-4.3-4.3"></path>
@@ -256,7 +164,7 @@ export function SiteHeader({ settings }: { settings: Record<string, string> }) {
                     </div>
                 </div>
                 
-                {/*  Mobile Menu Button for Floating Nav  */}
+                                {/*  Mobile Menu Button for Floating Nav  */}
                 <div className="absolute right-0 lg:hidden z-20">
                     <button id="mobile-menu-button-floating" className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground bg-cyan-400 hover:bg-cyan-500 text-white rounded-none w-8 h-8" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-«Redb»" data-state="closed">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-menu w-4 h-4">
