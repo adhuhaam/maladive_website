@@ -24,7 +24,8 @@ export default function LoginPage() {
     });
     setLoading(false);
     if (!res.ok) {
-      setError("Invalid username or password");
+      const data = (await res.json().catch(() => ({}))) as { error?: string };
+      setError(data.error ?? "Invalid username or password");
       return;
     }
     router.push("/admin");
