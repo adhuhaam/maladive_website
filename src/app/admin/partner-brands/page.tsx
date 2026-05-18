@@ -1,39 +1,55 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { deletePartnerBrand } from "@/lib/admin-actions";
+import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
+import { AdminTable, AdminTableRow, AdminTableCell } from "@/components/admin/AdminTable";
 
 export const dynamic = "force-dynamic";
 
 export default async function AdminBrandsPage() {
   const brands = await prisma.partnerBrand.findMany({ orderBy: { sortOrder: "asc" } });
+
   return (
     <div>
-      <div className="flex justify-between mb-6">
-        <h1 className="text-2xl font-bold">Partner Brands</h1>
-        <Link href="/admin/partner-brands/new" className="bg-cyan-600 text-white px-4 py-2 rounded text-sm">
-          Add Brand
-        </Link>
-      </div>
-      <ul className="bg-white rounded-lg shadow divide-y">
-        {brands.map((b) => (
-          <li key={b.id} className="px-4 py-3 flex justify-between items-center gap-4">
-            <div>
-              <span className="font-medium">{b.name}</span>
-              {!b.isActive && <span className="text-xs text-amber-600 ml-2">(hidden)</span>}
-            </div>
-            <div className="flex gap-3 shrink-0">
-              <Link href={`/admin/partner-brands/${b.id}/edit`} className="text-cyan-600 text-sm">
-                Edit
-              </Link>
-              <form action={deletePartnerBrand.bind(null, b.id)}>
-                <button type="submit" className="text-red-600 text-sm">
-                  Delete
-                </button>
-              </form>
-            </div>
-          </li>
-        ))}
-      </ul>
+      <AdminPageHeader
+        title="Partner Brands"
+        description="Brands shown in the homepage carousel."
+        action={{ label: "Add brand", href: "/admin/partner-brands/new" }}
+      />
+
+      {brands.length === 0 ? (
+        <p className="text-slate-400 text-sm text-center py-16 bg-white rounded-xl border">No brands yet.</p>
+      ) : (
+        <AdminTable headers={["Name", "Initials", "Status", "Actions"]}>
+          {brands.map((b) => (
+            <AdminTableRow key={b.id}>
+              <AdminTableCell className="font-medium text-slate-900">{b.name}</AdminTableCell>
+              <AdminTableCell>{b.initials ?? "—"}</AdminTableCell>
+              <AdminTableCell>
+                <span
+                  className={`text-xs font-semibold px-2 py-1 rounded-full ${
+                    b.isActive ? "bg-emerald-100 text-emerald-700" : "bg-amber-100 text-amber-700"
+                  }`}
+                >
+                  {b.isActive ? "Visible" : "Hidden"}
+                </span>
+              </AdminTableCell>
+              <AdminTableCell>
+                <div className="flex gap-3">
+                  <Link href={`/admin/partner-brands/${b.id}/edit`} className="text-cyan-600 font-medium hover:underline">
+                    Edit
+                  </Link>
+                  <form action={deletePartnerBrand.bind(null, b.id)}>
+                    <button type="submit" className="text-red-600 font-medium hover:underline">
+                      Delete
+                    </button>
+                  </form>
+                </div>
+              </AdminTableCell>
+            </AdminTableRow>
+          ))}
+        </AdminTable>
+      )}
     </div>
   );
 }

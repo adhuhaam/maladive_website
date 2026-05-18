@@ -1,31 +1,43 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
+import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
+import { AdminTable, AdminTableRow, AdminTableCell } from "@/components/admin/AdminTable";
 
 export const dynamic = "force-dynamic";
 
 export default async function AdminQuoteRequestsPage() {
   const quotes = await prisma.quoteRequest.findMany({ orderBy: { createdAt: "desc" } });
+
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-6">Quote Requests</h1>
-      <ul className="bg-white rounded-lg shadow divide-y">
-        {quotes.length === 0 && (
-          <li className="px-4 py-6 text-gray-500 text-sm">No quote requests yet.</li>
-        )}
-        {quotes.map((q) => (
-          <li key={q.id} className="px-4 py-3 flex justify-between items-center">
-            <div>
-              <Link href={`/admin/quote-requests/${q.id}`} className="font-medium text-cyan-700 hover:underline">
-                {q.name}
-              </Link>
-              <p className="text-sm text-gray-500">
-                {q.email} · {new Date(q.createdAt).toLocaleDateString()} · {q.status}
-                {q.telegramSent ? " · Telegram sent" : ""}
-              </p>
-            </div>
-          </li>
-        ))}
-      </ul>
+      <AdminPageHeader
+        title="Quote Requests"
+        description="Shop quote submissions from customers (also sent to Telegram when configured)."
+      />
+
+      {quotes.length === 0 ? (
+        <p className="text-slate-400 text-sm text-center py-16 bg-white rounded-xl border">No quote requests yet.</p>
+      ) : (
+        <AdminTable headers={["Customer", "Contact", "Date", "Status", ""]}>
+          {quotes.map((q) => (
+            <AdminTableRow key={q.id}>
+              <AdminTableCell className="font-medium text-slate-900">{q.name}</AdminTableCell>
+              <AdminTableCell className="text-slate-500">{q.email}</AdminTableCell>
+              <AdminTableCell>{new Date(q.createdAt).toLocaleDateString()}</AdminTableCell>
+              <AdminTableCell>
+                <span className="text-xs font-semibold px-2 py-1 rounded-full bg-slate-100 text-slate-600 capitalize">
+                  {q.status}
+                </span>
+              </AdminTableCell>
+              <AdminTableCell>
+                <Link href={`/admin/quote-requests/${q.id}`} className="text-cyan-600 font-medium hover:underline">
+                  View
+                </Link>
+              </AdminTableCell>
+            </AdminTableRow>
+          ))}
+        </AdminTable>
+      )}
     </div>
   );
 }

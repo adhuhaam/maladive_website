@@ -1,4 +1,6 @@
+import { unstable_cache } from "next/cache";
 import { prisma } from "./prisma";
+import { SITE_REVALIDATE } from "./cache";
 import type { PartnerResortItem } from "@/components/site/types";
 
 function parseStringArray(value: unknown): string[] | null {
@@ -75,13 +77,17 @@ function mapResort(row: {
   };
 }
 
-export async function getActiveResorts(): Promise<PartnerResortItem[]> {
-  const rows = await prisma.partnerResort.findMany({
-    where: { status: "active" },
-    orderBy: { name: "asc" },
-  });
-  return rows.map(mapResort);
-}
+export const getActiveResorts = unstable_cache(
+  async (): Promise<PartnerResortItem[]> => {
+    const rows = await prisma.partnerResort.findMany({
+      where: { status: "active" },
+      orderBy: { name: "asc" },
+    });
+    return rows.map(mapResort);
+  },
+  ["active-resorts"],
+  { revalidate: SITE_REVALIDATE },
+);
 
 export async function getResortBySlug(slug: string): Promise<PartnerResortItem | null> {
   const row = await prisma.partnerResort.findFirst({
